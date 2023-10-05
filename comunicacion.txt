@@ -1,1 +1,3 @@
 Axel hizo el back de enviar correo y su css
+
+Luciana hizo el front del Home con html y css
