@@ -37,7 +37,7 @@ if (isset($_POST['registrar'])) {
 
     let url_final = 'https://formsubmit.co/ajax/<?php echo $email; ?>'
     let usuario = '<?php echo $Nbr_u; ?>';
-    let mensaje = 'valide su correo: https://localhost/clase27/enviarCorreo/registrar.php?token=<?php echo $token; ?>';
+    let mensaje = 'valide su correo: https://localhost/vibesEntrega/enviarCorreo/registrar.php?token=<?php echo $token; ?>';
 
 
 $.ajax({
