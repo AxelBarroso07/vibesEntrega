@@ -1,0 +1,70 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #fff;
+}
+
+body {
+    backdrop-filter: blur(10px);
+    background-image: url('../../img/OC\ 07.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px; /* Tamaño máximo del formulario */
+    width: 100%;
+    text-align: center;
+}
+
+form input[type="text"],
+form input[type="password"]
+{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: transparent; 
+    border-bottom: 2px solid #fff;
+}
+
+form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    background-color: transparent; 
+    font-family: 'Poppins', sans-serif; 
+    cursor: pointer; 
+    border: 1px solid white; 
+    color: white; 
+}
+
+
+
+
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+}

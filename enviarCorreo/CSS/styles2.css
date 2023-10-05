@@ -1,0 +1,69 @@
+/* Estilos existentes */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.columna {
+    width: 50%;
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.imagen {
+    width: 100%;
+    height: calc(100vh - 45px);
+    object-fit: cover;
+}
+
+/* Estilos para el formulario */
+
+form {
+    text-align: center;
+    margin: 0 auto;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    display: block;
+    text-decoration: none;
+    outline: none;
+    font-size: 16px;
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    border: none;
+    border-bottom: 2px solid #000;
+    color: #000;
+    margin: 10px 0;
+    width: 100%; /* Ajustamos el ancho al 100% */
+}
+
+form input[type="submit"] {
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    border: 1px solid #000;
+    color: #000;
+    margin-top: 10px;
+}
