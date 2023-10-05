@@ -1,1 +1,4 @@
 Axel hizo el back de enviar correo y su css
+
+Nico creo la base de datos y la configuro
+
