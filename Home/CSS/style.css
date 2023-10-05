@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background: transparent;
+    position: fixed;
+    width: 100%;
+}
+
+.navbar {
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: #fff;
+    font-size: 36px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.login-buttons {
+    padding: 10px;
+    border-bottom: 2px solid #fff;
+}
+
+.nav-select:active {
+    text-decoration: none!important;
+    border: none!important;
+}
+
+.nav-select:focus-visible {
+    outline: none;
+}
+
+.contenido {
+    background-image: url('../../img/background-home.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#home, #productos, #contacto {
+    height: 100vh;
+}
+
+#productos{
+    background-color: aqua;
+}
+
+#contacto{
+    background-color: blueviolet;
+}
+
+/* Estilos para pantallas de hasta 630px de ancho */
+@media only screen and (max-width: 630px) {
+    header {
+        background-color: rgba(0, 0, 0, 0.8); /* Cambia el fondo del header */
+    }
+
+    .navbar {
+        flex-direction: column; /* Apila los elementos de la navbar en columna */
+        text-align: center; /* Centra el texto en la navbar */
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Apila los elementos de la navbar en columna */
+    }
+
+    .navbar a {
+        margin-bottom: 10px; /* Agrega espacio entre los enlaces de la navbar */
+    }
+
+    h1 {
+        font-size: 28px; /* Reduce el tamaño del título */
+    }
+
+
+    select{
+        display: none;
+    }
+}
+
+/* Resto de tu código CSS */
