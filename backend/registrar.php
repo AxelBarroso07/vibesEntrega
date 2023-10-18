@@ -1,6 +1,6 @@
 
 <?php
-include 'conexion_db.php';
+include 'db/conexion_db.php';
 
 ?>
 
@@ -37,7 +37,7 @@ if (isset($_POST['registrar'])) {
 
     let url_final = 'https://formsubmit.co/ajax/<?php echo $email; ?>'
     let usuario = '<?php echo $Nbr_u; ?>';
-    let mensaje = 'valide su correo: https://localhost/vibesEntrega/enviarCorreo/registrar.php?token=<?php echo $token; ?>';
+    let mensaje = 'valide su correo: https://localhost/vibesEntrega/backend/registrar.php?token=<?php echo $token; ?>';
 
 
 $.ajax({
@@ -80,7 +80,7 @@ if(isset($_GET['token'])){
     }else{
         echo 'el token no existe';
         session_destroy();
-        header("location:form_registro.html");
+        header("location:../form_registro.html");
     }
 }
 ?>

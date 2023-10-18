@@ -2,5 +2,5 @@ Axel hizo el back de enviar correo y su css
 
 Luciana hizo el frontend del Home con html y css
 
-Nico creo la base de datos y la configuro
+Nico creo la base de datos y la configuro, reordenó la estructura de manera correcta y agregó la funcion de recuperar contraseña.
 

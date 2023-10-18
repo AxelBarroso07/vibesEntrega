@@ -1,6 +1,6 @@
 <?php
 
-include 'conexion_db.php';
+include 'db/conexion_db.php';
 
          if (isset($_POST['ingresar'])) {
 

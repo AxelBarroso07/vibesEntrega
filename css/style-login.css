@@ -12,7 +12,7 @@ h1 {
 
 body {
     backdrop-filter: blur(10px);
-    background-image: url('../../img/OC\ 07.jpg');
+    background-image: url('../img/OC 07.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;

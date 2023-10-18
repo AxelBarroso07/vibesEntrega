@@ -1,5 +1,5 @@
 <?php
-include 'conexion_db.php';
+include 'db/conexion_db.php';
 ?>
 
 
@@ -39,12 +39,14 @@ if (isset($_POST['Recuperar'])) {
     $consulta = mysqli_query($conexion, $sql);
     if (mysqli_num_rows($consulta) > 0) {
         $token = time();
+        $registro = mysqli_fetch_assoc($consulta);
         $sqlUpdate = "UPDATE usuarios SET token = '$token' WHERE email = '$correo'";
         $actualizarToken = mysqli_query($conexion, $sqlUpdate);
 ?>
         <script>
             let url_final = 'https://formsubmit.co/ajax/<?php echo $correo; ?>'
-            let mensaje = 'Recupere su contraseña: http://localhost/vibesEntrega/enviarCorreo/nuevaContrasenia?token=<?php echo $token; ?>';
+            let usuario = '<?php $registro['Nbr_u']; ?>';
+            let mensaje = 'Recupere su contraseña: https://localhost/vibesEntrega/backend/nuevaContrasenia.php?token=<?php echo $token; ?>';
 
 
             $.ajax({
@@ -53,6 +55,7 @@ if (isset($_POST['Recuperar'])) {
                 dataType: 'json',
                 accepts: 'application/json',
                 data:{
+                    name: usuario,
                     message: mensaje,
                 },
                 success: (data) => document.write('Correo enviado, revise su casilla de correos'), 

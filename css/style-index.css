@@ -52,7 +52,7 @@ h1 {
 }
 
 .contenido {
-    background-image: url('../../img/background-home.jpg');
+    background-image: url('../img/background-home.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
