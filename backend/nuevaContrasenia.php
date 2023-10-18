@@ -42,10 +42,10 @@ if (mysqli_num_rows($consulta) > 0) {
     $sqlUpdate = "UPDATE usuarios SET token= 1, Pass_u= '$Pass_u' WHERE token = '$token'";
     $actualizar = mysqli_query($conexion, $sqlUpdate);
     echo 'Contraseña actualizada correctamente.';
-    echo '<a href="../index.html">Volver al inicio</a>';
+    echo '<a href="../index.php">Volver al inicio</a>';
 } else {
     echo 'el token no existe';
-    echo '<a href="../index.html">Volver al inicio</a>';
+    echo '<a href="../index.php">Volver al inicio</a>';
 }
 }
 
