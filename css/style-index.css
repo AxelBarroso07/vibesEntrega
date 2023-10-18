@@ -5,18 +5,19 @@ body {
 }
 
 header {
-    background: transparent;
+    background: rgba(0, 0, 0, 0.5);
     position: fixed;
     width: 100%;
 }
 
 .navbar {
-    background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: 'Poppins', sans-serif;
     margin: 20px;
+  
+    
 }
 
 h1 {
@@ -25,6 +26,8 @@ h1 {
     margin: 0;
     font-weight: bold;
 }
+
+
 
 .navbar ul {
     list-style: none;
@@ -48,7 +51,7 @@ h1 {
 }
 
 .nav-select:focus-visible {
-    outline: none;
+    outline: none!important;
 }
 
 .contenido {
@@ -63,39 +66,45 @@ h1 {
 }
 
 
+
 #home, #productos, #contacto {
     height: 100vh;
 }
 
 #productos{
-    background-color: aqua;
+    background-color: #fff;
+    
 }
 
 #contacto{
-    background-color: blueviolet;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    background-color: #000;
 }
 
-/* Estilos para pantallas de hasta 630px de ancho */
+
 @media only screen and (max-width: 630px) {
     header {
-        background-color: rgba(0, 0, 0, 0.8); /* Cambia el fondo del header */
+        background-color: rgba(0, 0, 0, 0.8); 
     }
 
     .navbar {
-        flex-direction: column; /* Apila los elementos de la navbar en columna */
-        text-align: center; /* Centra el texto en la navbar */
+        flex-direction: column; 
+        text-align: center; 
     }
 
     .navbar ul {
-        flex-direction: column; /* Apila los elementos de la navbar en columna */
+        flex-direction: column; 
     }
 
     .navbar a {
-        margin-bottom: 10px; /* Agrega espacio entre los enlaces de la navbar */
+        margin-bottom: 10px; 
     }
 
     h1 {
-        font-size: 28px; /* Reduce el tamaño del título */
+        font-size: 28px; 
     }
 
 
@@ -104,4 +113,4 @@ h1 {
     }
 }
 
-/* Resto de tu código CSS */
+
