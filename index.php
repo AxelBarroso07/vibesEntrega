@@ -11,19 +11,23 @@
     <title>Document</title>
 </head>
 <body>
+
+
+
+
     <header>
-        <?php include('./includes/header.html'); ?>
+        <?php include('./includes/header.php'); ?>
     </header>
     <section id="home" class="contenido">
        
     </section>
 
     <section id="productos" class="productos">
-
+        
     </section>
     
     <section id="contacto" class="contacto">
-
+    <?php include('./includes/contacto.html'); ?>
     </section>
 
 

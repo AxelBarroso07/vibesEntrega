@@ -1,4 +1,4 @@
-Axel hizo el back de enviar correo y su css
+Axel hizo el back de enviar correo y su css. Actualizacion de header, seccion contacto.
 
 Luciana hizo el frontend del Home con html y css
 

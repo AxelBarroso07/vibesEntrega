@@ -1,3 +1,10 @@
+<?php 
+
+session_start(); 
+
+include './backend/db/conexion_db.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,8 +26,20 @@
         <option value="#contacto">contacto</option>
       </select>
       <div class="login-buttons">
-        <a href="./login.html">INICIO SESION /</a>
-        <a href="./form_registro.html">REGISTRO</a>
+        <?php
+       if (isset($_SESSION['usuario'])) {
+        echo '<span style="color: white;">Bienvenido '. $_SESSION['usuario'] . '</span>';
+
+      echo '  <form action="backend/logout.php" method="post">
+    <button type="submit" class="logout-button">Cerrar Sesión</button>
+</form>';
+
+            } else {
+              echo '<a href="./login.html" style="color: white;">INICIO SESION</a> <span style="color: white;">/</span> <a href="./form_registro.html" style="color: white;">REGISTRO</a>';
+
+            }
+
+            ?>
       </div>
     </nav>
 </body>

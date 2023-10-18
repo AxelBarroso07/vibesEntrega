@@ -14,7 +14,7 @@ include 'db/conexion_db.php';
         $registro = mysqli_fetch_assoc($consulta);
     if(password_verify($contrasenia, $registro['Pass_u'])){
         $_SESSION['usuario'] = $usuario;
-        header("location:inicio.php");
+        header("location:../index.php");
         echo $_SESSION['usuario'];
     }else{
         echo 'contraseña incorrecta';
