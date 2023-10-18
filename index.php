@@ -12,18 +12,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <h1>vibes</h1>
-          <select class ="nav-select=" id="">
-            <option value="#home">home</option>
-            <option value="#productos">productos</option>
-            <option value="#contacto">contacto</option>
-          </select>
-          <div class="login-buttons">
-            <a href="./login.html">INICIO SESION /</a>
-            <a href="./form_registro.html">REGISTRO</a>
-          </div>
-        </nav>
+        <?php include('./includes/header.html'); ?>
     </header>
     <section id="home" class="contenido">
        
