@@ -1,6 +1,7 @@
 Axel hizo el back de enviar correo y su css
 
-Luciana hizo el frontend del Home con html y css
+Luciana hizo el frontend del Home con html y css, realizo el diseño de "perfil.php" cuando inicien sesion,
+y evitar los emails de registro duplicados
 
 Nico creo la base de datos y la configuro, reordenó la estructura de manera correcta y agregó la funcion de recuperar contraseña.
 
