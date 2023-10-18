@@ -22,7 +22,7 @@ include 'db/conexion_db.php';
         $emailQuery = "Select * from usuarios where email = \"$email\"";
         $emailInUse = mysqli_num_rows(mysqli_query($conexion, $emailQuery));
         if ($emailInUse >= 1) {
-            echo "Email ya en uso, utilize otro. <a href='../form_registro.php'>Reiniciar</a>";
+            echo "Email ya en uso, utilize otro. <a href='../form_registro.html'>Reiniciar</a>";
         } else {
             $Nbr_u = $_POST['usuario'];
             $contrasenia = $_POST['contrasenia'];
