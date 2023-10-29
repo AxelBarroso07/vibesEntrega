@@ -4,4 +4,5 @@ Luciana hizo el frontend del Home con html y css, realizo el diseño de "perfil.
 y evitar los emails de registro duplicados
 
 Nico creo la base de datos y la configuro, reordenó la estructura de manera correcta y agregó la funcion de recuperar contraseña.
+Creo el CRUD e implementó la visualizacion de productos a la pagina de inicio.
 
