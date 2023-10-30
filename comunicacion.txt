@@ -6,3 +6,4 @@ y evitar los emails de registro duplicados, y diseño a pantallas blancas
 Nico creo la base de datos y la configuro, reordenó la estructura de manera correcta y agregó la funcion de recuperar contraseña.
 Creo el CRUD e implementó la visualizacion de productos a la pagina de inicio.
 
+Axel hizo el apartado de cada producto, agregó campos en la base de datos.
