@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-10-2023 a las 01:13:32
+-- Tiempo de generación: 30-10-2023 a las 18:43:53
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -32,8 +32,17 @@ CREATE TABLE `productos` (
   `nombre` varchar(32) NOT NULL,
   `precio` float NOT NULL,
   `cantidad_stock` int(16) NOT NULL,
-  `imagen` varchar(120) NOT NULL
+  `imagen` varchar(120) NOT NULL,
+  `informacion` varchar(200) NOT NULL,
+  `talles` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`id_producto`, `nombre`, `precio`, `cantidad_stock`, `imagen`, `informacion`, `talles`) VALUES
+(25, 'Remera basica negra', 30000, 20, '1698686388-remera.jpg', 'Remera basica de algodon puro', 'S');
 
 -- --------------------------------------------------------
 
@@ -49,6 +58,13 @@ CREATE TABLE `usuarios` (
   `email` varchar(60) NOT NULL,
   `token` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`ID_u`, `Nbr_u`, `Img_u`, `Pass_u`, `email`, `token`) VALUES
+(27, 'axel', '', '$2y$10$jT5IDMWivF7Od84RFZHveORBcth2AcOn1IybiO84cqBOProIK/Oz.', 'asd@gmail.com', 1698687680);
 
 --
 -- Índices para tablas volcadas
@@ -74,13 +90,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_producto` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID_u` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `ID_u` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
