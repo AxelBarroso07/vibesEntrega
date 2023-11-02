@@ -24,7 +24,7 @@ h2{
     justify-content:center; */
     color:white;
     cursor:pointer;
-    backdrop-filter: blur(10px); */
+    backdrop-filter: blur(10px); 
     background-color: rgba(0, 0, 0, 0.5);
     /* padding: 20px; */
 /* border-radius: 10px; */
