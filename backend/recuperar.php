@@ -14,87 +14,28 @@ include 'db/conexion_db.php';
   src="https://code.jquery.com/jquery-3.7.0.min.js"
   integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
   crossorigin="anonymous"></script>
-  <style>
-    *{
-        margin:0;
-        padding:0;
-        /* background-color:black; */
-        
-    }
-    body{
-        background-color:black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-    h2{
-        display:flex;
-        justify-content:center;
-        margin:10px;
-        color:white;
-        font-weight:bold;
-    }
-    .form{
-        display:flex;
-        justify-content:center;
-        color:white;
-        cursor:pointer;
-    }
-    label{
-        color:white;
-        font-weight:bold;
-    }
-    input{
-        background-color:#fff;
-        color:black;
-        font-weight:bold;
-        cursor:pointer;
-        border-radius:5px;
-    }
-    input:hover{
-        cursor:pointer;
-        background-color:#1DFC03;
-        font-weight:bold;
-    }
-    .boton{
-        display:flex;
-        justify-content:center;
-        margin:20px;
-    }
-    .caja{
-        width: 300px;
-        padding: 20px;
-        border: 1px solid #ccc;
-        background-color: #f9f9f9;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-        background-color:#333;
-        border-radius:5px;
-    }
-    h1 {
-        background: red;
-        background-color: #4CAF50; 
-        color: white;
-        font-weight:bold; 
-        padding: 10px; 
-        text-align: center; 
-        font-size: 20px;
-        margin:250px;
-    }
-  </style>
+  <link rel="stylesheet" href="../css/style-recuperar.css">
 </head>
 
 <body>
+<a href="../index.php">
+        <div class="svg">
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+            <style>svg{fill:#ffffff; width:50px; height:30px; padding:30px;}</style>
+            <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+        </div>
+    </a>
     <div class="caja">
         <h2>Recuperar contraseña</h2>
         <div class="form">
             <form action="" method="post">
-            <label for="1">Correo:</label>
-            <input type="email" name="correo" id="1">
+                <div class="email">
+            <input type="email" name="correo" id="1" placeholder="email">
+                </div>
             <div class="boton">
                 <input type="submit" name="Recuperar" value="Recuperar">
             </div>  
+            
         </form>
     </div>
 
@@ -132,7 +73,7 @@ if (isset($_POST['Recuperar'])) {
                     name: usuario,
                     message: mensaje,
                 },
-                success: (data) => document.write('<style type="text/css"> body {background-color:black;} h1 {display:flex; justify-content:center; color: red; font-weight:bold;} </style><h1 id="texto">Correo enviado, revise su casilla de correos</h1>'), 
+                success: (data) => document.write('Correo enviado, revise su casilla de correos</h1>'), 
                 error: (err) => document.write('Error al enviar el correo: ' + err),
             });
         </script>

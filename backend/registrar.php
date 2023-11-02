@@ -11,24 +11,7 @@ include 'db/conexion_db.php';
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<style>
-    *{
-        background-color:black;
-   }
-    .texto {
-        /* background-color: #4CAF50;  */
-        color: white;
-        font-weight:bold; 
-        padding: 10px; 
-        text-align: center; 
-        font-size: 20px;
-        margin:250px;
-    }
-    .svg{
-        /* background-color:white; */
-        cursor:pointer;
-    }
-</style>    
+<link rel="stylesheet" href="../css/style-registrar.css">    
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
 
@@ -36,8 +19,10 @@ include 'db/conexion_db.php';
 <!-- <div class="mensaje-enviado">Correo enviado, por favor valide</div> -->
     <a href="../index.php">
         <div class="svg">
-        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
-    </div>
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+            <style>svg{fill:#ffffff; width:50px; height:30px; padding:30px;}</style>
+            <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+        </div>
     </a>
     
     <?php
@@ -47,7 +32,7 @@ include 'db/conexion_db.php';
         $emailQuery = "Select * from usuarios where email = \"$email\"";
         $emailInUse = mysqli_num_rows(mysqli_query($conexion, $emailQuery));
         if ($emailInUse >= 1) {
-            echo '<p class="texto">Email ya en uso, utilize otro. <a href="../form_registro.html">Reiniciar</a></p>';
+            echo '<p class="texto">Email ya en uso, utilize otro. <a href="../form_registro.html"></a></p>';
         } else {
             $Nbr_u = $_POST['usuario'];
             $contrasenia = $_POST['contrasenia'];
@@ -85,9 +70,9 @@ include 'db/conexion_db.php';
 
     if (isset($_GET['send'])) {
         if ($_GET['send'] == 1) {
-            echo '<p class="texto">Correo enviado, por favor valide</p>';
+            echo '<div class ="envoltura"><div class="texto">correo enviado, por favor valide</div></div>';
         } else {
-            echo '<p class="texto">error al enviar el correro de validacion</p>';
+            echo '<div class="texto">error al enviar el correro de validacion</div>';
         }
     }
     if (isset($_GET['token'])) {
@@ -109,6 +94,17 @@ include 'db/conexion_db.php';
     }
     ?>
 
+    <!-- <script>
+        const text = "Correo enviado, por favor valide";
+
+        let textIndex = 0;
+        Array.from(text).forEach(letter => {
+            textIndex++;
+            setTimeout(() => {
+                document.querySelector(".texto").textContent += letter;
+            }, 100*textIndex);
+        })
+    </script> -->
 
 
 </body>

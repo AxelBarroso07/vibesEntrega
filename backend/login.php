@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>     
+    <link rel="stylesheet" href="../css/style-login.css">
+</head>
+<body>
+    
 <?php
 
 include 'db/conexion_db.php';
@@ -20,7 +30,7 @@ include 'db/conexion_db.php';
         echo 'contraseña incorrecta';
     }
     }else{
-        echo 'el usuario no existe o no valido el correo';
+        echo '<div class="envoltura"><div class ="texto"el usuario no existe o no valido el correo</div></div>';
         session_destroy();
     }
 

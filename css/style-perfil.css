@@ -1,0 +1,47 @@
+*{
+    padding:0;
+    margin: 0;
+    
+}
+body{
+    /* background-image: url('../img/fondoregistro.jpg');
+    background-repeat: no-repeat; */
+    
+    /* background-color:#; */
+    color:#fff;
+    min-height:100vh;
+}
+h1, h2{ 
+    text-align:center;
+}
+h2{
+    opacity: 1;
+    /* background-color:#aaa6; */
+    border-radius:5px;
+    max-width:400px;
+    margin: auto;
+}
+.columna {
+padding: 20px;
+overflow: hidden;
+display: flex;
+justify-content:space-between;
+align-items: center;}
+
+.texto{
+    padding: 1rem;
+    color:#fefefe;
+    margin-right: 5rem;
+    display:flex;
+    flex-direction:column;
+    align-self:center;
+    gap:2rem;
+    background-color:gray;
+    border-radius:8px;
+}
+
+.imagen {
+width: 50%;
+height: calc(100vh - 45px);
+object-fit: cover;
+}
