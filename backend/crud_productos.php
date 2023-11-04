@@ -51,7 +51,7 @@ if (isset($_POST['registrar'])) {
                         <p>Información: ' . $registro['informacion'] . '</p>
                         <p>Talles: ' . $registro['talles'] . '</p>
                         <div class="buttons">
-                            <a href="crud_productos.php?id_editar=' . $registro['id_producto'] . '&&nombre=' . $registro['nombre'] . '&&precio=' . $registro['precio'] . '&&cantidad_stock=' . $registro['cantidad_stock'].'"><button><i class="fa-solid fa-pen-to-square"></i></button></a>
+                            <a href="crud_productos.php?id_editar=' . $registro['id_producto'] . '&&nombre=' . $registro['nombre'] . '&&precio=' . $registro['precio'] . '&&cantidad_stock=' . $registro['cantidad_stock'] . '"><button><i class="fa-solid fa-pen-to-square"></i></button></a>
                             <a href="crud_productos.php?id_eliminar=' . $registro['id_producto'] . '"><button><i class="fa-solid fa-trash"></i></button></a>
                         </div>
                     </div>

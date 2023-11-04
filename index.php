@@ -13,7 +13,7 @@ include('backend/db/conexion_db.php');
     <link href="https://fonts.googleapis.com/css2?family=Days+One&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="css/style-index.css">
-    <title>vibes</title>
+    <title>Vibes</title>
 </head>
 
 <body>
@@ -52,7 +52,6 @@ include('backend/db/conexion_db.php');
         <?php include('./includes/contacto.html'); ?>
     </section>
 
-    <script src="script.js"></script>
 </body>
 
 </html>

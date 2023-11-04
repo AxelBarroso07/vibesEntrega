@@ -23,10 +23,11 @@ include('db/conexion_db.php');
         }
 
 
-        
 
-       
-        button, select {
+
+
+        button,
+        select {
             font-size: 18px;
             background-color: #fff;
             color: #000;

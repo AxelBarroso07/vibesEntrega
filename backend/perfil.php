@@ -15,20 +15,25 @@ if (isset($_SESSION['usuario'])) {
 
 <!DOCTYPE html>
 <html>
-<head>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Su perfil de Vibes</title>
     <link rel="stylesheet" href="../enviarCorreo/CSS/style-perfil.css">
 </head>
-<body>
-    
 
-   <div class="columna">
+<body>
+
+
+    <div class="columna">
         <img src="../img/fondoregistro.jpg" alt="Tu imagen" class="imagen">
         <div class="texto">
-            <h1>BIENVENIDA/O A VIBES: <?php echo $nombre?></h1>
+            <h1>BIENVENIDA/O A VIBES: <?php echo $nombre ?></h1>
             <hr>
             <h2 class="nombre">Nombre: <?php echo $nombre; ?></h2>
         </div>
     </div>
 </body>
+
 </html>
