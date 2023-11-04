@@ -36,7 +36,7 @@ include './backend/db/conexion_db.php';
     <button type="submit" class="logout-button">Cerrar Sesión</button>
 </form>';
       } else {
-        echo '<a href="./login.html" style="color: white;">INICIO SESION</a> <span style="color: white;">/</span> <a href="./form_registro.php" style="color: white;">REGISTRO</a>';
+        echo '<a href="./form_login.php" style="color: white;">INICIO SESION</a> <span style="color: white;">/</span> <a href="./form_registro.php" style="color: white;">REGISTRO</a>';
       }
 
       ?>
