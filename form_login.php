@@ -25,7 +25,7 @@ include 'backend/db/conexion_db.php';
         <input type="text" name="usuario" placeholder="usuario" required>
         <input type="password" name="contrasenia" placeholder="Contraseña" required>
         <input type="submit" name="ingresar" value="ingresar">
-        <a href="backend/recuperar.php" style="color: white; text-decoration: none; font-family: 'Poppins', sans-serif;"> Olvidé mi contraseña </a>
+        <a href="backend/form_recuperar.php" style="color: white; text-decoration: none; font-family: 'Poppins', sans-serif;"> Olvidé mi contraseña </a>
     </form>
 
     <?php

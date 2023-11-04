@@ -30,6 +30,7 @@ include 'db/conexion_db.php';
             </svg>
         </div>
     </a>
+
     <div class="caja">
         <h2>Recuperar contraseña</h2>
         <div class="form">
@@ -43,6 +44,7 @@ include 'db/conexion_db.php';
 
             </form>
         </div>
+    </div>
 
 
 </body>
@@ -57,15 +59,15 @@ if (isset($_POST['Recuperar'])) {
 
     $sql = "SELECT * FROM usuarios WHERE email = '$correo'";
     $consulta = mysqli_query($conexion, $sql);
+    $registro = mysqli_fetch_assoc($consulta);
     if (mysqli_num_rows($consulta) > 0) {
         $token = time();
-        $registro = mysqli_fetch_assoc($consulta);
         $sqlUpdate = "UPDATE usuarios SET token = '$token' WHERE email = '$correo'";
         $actualizarToken = mysqli_query($conexion, $sqlUpdate);
 ?>
         <script>
             let url_final = 'https://formsubmit.co/ajax/<?php echo $correo; ?>'
-            let usuario = '<?php $registro['Nbr_u']; ?>';
+            let usuario = '<?php echo $registro['Nbr_u']; ?>';
             let mensaje = 'Recupere su contraseña: https://localhost/vibesEntrega/backend/nuevaContrasenia.php?token=<?php echo $token; ?>';
 
 
@@ -78,15 +80,22 @@ if (isset($_POST['Recuperar'])) {
                     name: usuario,
                     message: mensaje,
                 },
-                success: (data) => document.write('Correo enviado, revise su casilla de correos</h1>'),
-                error: (err) => document.write('Error al enviar el correo: ' + err),
+                success: (data) => window.location = 'form_recuperar.php?send=1',
+                error: (err) => window.location = 'form_recuperar.php?send=0',
             });
         </script>
+
 <?php
     } else {
-        echo '<p class="texto">el correo no existe</p>';
+        echo '<p class="texto">El correo no es valido</p>';
     }
 }
 
-
+if (isset($_GET['send'])) {
+    if ($_GET['send'] == 1) {
+        echo '<div class="texto"> Correo enviado, revise su casilla de correos</div>';
+    } else {
+        echo '<div class="texto"> Error al enviar el correo </div>';
+    }
+}
 ?>
