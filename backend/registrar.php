@@ -11,7 +11,7 @@ include 'db/conexion_db.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrarse a Vibes</title>
     <link rel="stylesheet" href="../css/style-registrar.css">
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -33,52 +33,11 @@ include 'db/conexion_db.php';
 
     <?php
 
-    if (isset($_POST['registrar'])) {
-        $email = $_POST['email'];
-        $emailQuery = "Select * from usuarios where email = \"$email\"";
-        $emailInUse = mysqli_num_rows(mysqli_query($conexion, $emailQuery));
-        if ($emailInUse >= 1) {
-            echo '<p class="texto">Email ya en uso, utilize otro. <a href="../form_registro.html"></a></p>';
-        } else {
-            $Nbr_u = $_POST['usuario'];
-            $contrasenia = $_POST['contrasenia'];
-            $token = time();
-
-            $Pass_u = password_hash($contrasenia, PASSWORD_DEFAULT);
-
-            $sql = "INSERT INTO usuarios (Nbr_u, Pass_u, email, token) VALUES ('$Nbr_u', '$Pass_u', '$email', '$token')";
-            $insertar = mysqli_query($conexion, $sql);
-
-
-    ?>
-            <script>
-                let url_final = 'https://formsubmit.co/ajax/<?php echo $email; ?>'
-                let usuario = '<?php echo $Nbr_u; ?>';
-                let mensaje = 'valide su correo: https://localhost/vibesEntrega/backend/registrar.php?token=<?php echo $token; ?>';
-
-
-                $.ajax({
-                    method: 'POST',
-                    url: url_final,
-                    dataType: 'json',
-                    accepts: 'application/json',
-                    data: {
-                        name: usuario,
-                        message: mensaje,
-                    },
-                    success: (data) => window.location = 'registrar.php?send=1',
-                    error: (err) => window.location = 'registrar.php?send=0',
-                });
-            </script>
-    <?php
-        }
-    }
-
     if (isset($_GET['send'])) {
         if ($_GET['send'] == 1) {
-            echo '<div class ="envoltura"><div class="texto">correo enviado, por favor valide</div></div>';
+            echo '<div class="texto"> Correo enviado, por favor validelo para ingresar a Vibes </div>';
         } else {
-            echo '<div class="texto">error al enviar el correro de validacion</div>';
+            echo '<div class="texto"> Error al enviar el correo de validacion </div>';
         }
     }
     if (isset($_GET['token'])) {
@@ -86,19 +45,22 @@ include 'db/conexion_db.php';
         $token = $_GET['token'];
         $sql = "SELECT * FROM usuarios WHERE token= '$token'";
         $consulta = mysqli_query($conexion, $sql);
+        $registro = mysqli_fetch_assoc($consulta);
         if (mysqli_num_rows($consulta) > 0) {
             $_SESSION['usuario'] = $registro['Nbr_u'];
             $sql = "UPDATE usuarios SET token= 1 WHERE token = '$token'";
             $actualizar = mysqli_query($conexion, $sql);
-            echo 'usuario enviado, ya puede session';
-            header("location:inicio.php");
+            echo 'usuario enviado';
+            header("location: ../index.php");
+            echo $_SESSION['usuario'];
         } else {
-            echo 'el token no existe';
+            echo 'ERROR - el token no existe';
             session_destroy();
-            header("location:../form_registro.html");
+            header("location:../form_registro.php");
         }
     }
     ?>
+
 
 </body>
 
