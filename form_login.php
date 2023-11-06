@@ -43,7 +43,7 @@ include 'backend/db/conexion_db.php';
                 $_SESSION['usuario'] = $usuario;
                 header("location:index.php");
             } else {
-                echo 'Contraseña incorrecta';
+                echo '<div class="envoltura"><div class="texto">Contraseña incorrecta</div></div>';
             }
         } else {
             echo '<div class="envoltura"><div class ="texto"> El usuario no existe o no valido el correo </div></div>';
