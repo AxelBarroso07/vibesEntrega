@@ -22,14 +22,15 @@ include './backend/db/conexion_db.php';
 <body>
   <nav class="navbar">
     <h1>vibes</h1>
-    <select class="nav-select=" id="">
+    <!-- <select class="nav-select=" id="">
       <option value="#home">home</option>
       <option value="#productos">productos</option>
       <option value="#contacto">contacto</option>
-    </select>
+    </select> -->
     <div class="login-buttons">
       <?php
       if (isset($_SESSION['usuario'])) {
+        echo '<a href="backend/perfil.php"> <i class="fa-regular fa-user"></i> </a>';
         echo '<span style="color: white;">Bienvenido ' . $_SESSION['usuario'] . '</span>';
 
         echo '  <form action="backend/logout.php" method="post">

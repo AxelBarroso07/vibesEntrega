@@ -41,6 +41,7 @@ include 'backend/db/conexion_db.php';
             $registro = mysqli_fetch_assoc($consulta);
             if (password_verify($contrasenia, $registro['Pass_u'])) {
                 $_SESSION['usuario'] = $usuario;
+                $_SESSION['email'] = $registro['email'];
                 header("location:index.php");
             } else {
                 echo '<div class="envoltura"><div class="texto">Contraseña incorrecta</div></div>';
