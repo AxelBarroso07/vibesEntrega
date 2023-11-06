@@ -20,9 +20,13 @@ include 'backend/db/conexion_db.php';
 
 <body>
     <div class="container">
+    
         <div class="columna">
+        
             <div class="background-color"></div>
+            
             <form action="" method="post" class="form">
+            <a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
                 <input type="text" name="usuario" placeholder="Usuario" required>
                 <input type="password" name="contrasenia" placeholder="Contraseña" required>
                 <input type="email" name="email" placeholder="Email" required>

@@ -18,9 +18,11 @@ include 'backend/db/conexion_db.php';
     <title>Iniciar sesion</title>
 </head>
 
-<body>
-
+<body> 
+    
+    
     <form method="post" action="">
+        <a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
         <h1>Iniciar sesión</h1>
         <input type="text" name="usuario" placeholder="usuario" required>
         <input type="password" name="contrasenia" placeholder="Contraseña" required>
@@ -47,11 +49,25 @@ include 'backend/db/conexion_db.php';
                 echo '<div class="envoltura"><div class="texto">Contraseña incorrecta</div></div>';
             }
         } else {
-            echo '<div class="envoltura"><div class ="texto"> El usuario no existe o no valido el correo </div></div>';
-            session_destroy();
+            $sqlAdmin = "SELECT * FROM usuarios WHERE Nbr_u = '$usuario' AND token = 2";
+            $consultaAdmin = mysqli_query($conexion, $sqlAdmin);
+            if (mysqli_num_rows($consultaAdmin) > 0) {
+                $registroAdmin = mysqli_fetch_assoc($consultaAdmin);
+                if ($contrasenia == $registroAdmin['Pass_u']) {
+                    $_SESSION['usuarioAdmin'] = $usuario;
+                    $_SESSION['emailAdmin'] = $registroAdmin['email'];
+                    header("location:backend/vibesAdmin.php");
+                }
+                else{
+                    echo '<div class="envoltura"><div class="texto">Contraseña incorrecta</div></div>';
+                }
+            }
+            else {
+                echo '<div class="envoltura"><div class ="texto"> El usuario no existe o no valido el correo </div></div>';
+                session_destroy();
+            }
         }
     }
-
     ?>
 
 </body>

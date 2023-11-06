@@ -32,6 +32,7 @@ if (isset($_POST['registrar'])) {
 </head>
 
 <body>
+    <a href="vibesAdmin.php"> <h2>Volver atras</h2></a>
     <h1>CRUD - PRODUCTOS</h1>
     <h2>Productos listados</h2>
     <?php

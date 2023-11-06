@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 30-10-2023 a las 18:43:53
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Host: 127.0.0.1
+-- Generation Time: Nov 06, 2023 at 04:40 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,27 +18,27 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `vibesdb`
+-- Database: `vibesdb`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `productos`
+-- Table structure for table `productos`
 --
 
 CREATE TABLE `productos` (
   `id_producto` int(4) NOT NULL,
-  `nombre` varchar(32) NOT NULL,
+  `nombre` varchar(32) COLLATE utf8_bin NOT NULL,
   `precio` float NOT NULL,
   `cantidad_stock` int(16) NOT NULL,
-  `imagen` varchar(120) NOT NULL,
-  `informacion` varchar(200) NOT NULL,
-  `talles` varchar(11) NOT NULL
+  `imagen` varchar(120) COLLATE utf8_bin NOT NULL,
+  `informacion` varchar(200) COLLATE utf8_bin NOT NULL,
+  `talles` varchar(11) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `productos`
+-- Dumping data for table `productos`
 --
 
 INSERT INTO `productos` (`id_producto`, `nombre`, `precio`, `cantidad_stock`, `imagen`, `informacion`, `talles`) VALUES
@@ -47,56 +47,57 @@ INSERT INTO `productos` (`id_producto`, `nombre`, `precio`, `cantidad_stock`, `i
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Table structure for table `usuarios`
 --
 
 CREATE TABLE `usuarios` (
   `ID_u` int(8) NOT NULL,
-  `Nbr_u` varchar(50) NOT NULL,
-  `Img_u` varchar(100) NOT NULL,
-  `Pass_u` varchar(120) NOT NULL,
-  `email` varchar(60) NOT NULL,
+  `Nbr_u` varchar(50) COLLATE utf8_bin NOT NULL,
+  `Pass_u` varchar(120) COLLATE utf8_bin NOT NULL,
+  `email` varchar(60) COLLATE utf8_bin NOT NULL,
   `token` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Dumping data for table `usuarios`
 --
 
-INSERT INTO `usuarios` (`ID_u`, `Nbr_u`, `Img_u`, `Pass_u`, `email`, `token`) VALUES
-(27, 'axel', '', '$2y$10$jT5IDMWivF7Od84RFZHveORBcth2AcOn1IybiO84cqBOProIK/Oz.', 'asd@gmail.com', 1698687680);
+INSERT INTO `usuarios` (`ID_u`, `Nbr_u`, `Pass_u`, `email`, `token`) VALUES
+(1, 'NicoAdmin', 'VentanaAdmin', 'cabral.nicolas@tecnica7.edu.ar', 2),
+(27, 'axel', '$2y$10$jT5IDMWivF7Od84RFZHveORBcth2AcOn1IybiO84cqBOProIK/Oz.', 'asd@gmail.com', 1698687680),
+(40, 'nico', '$2y$10$ZkpYmlAa9VHn3JI/vHY7uO.GJHKepbPUl/xtJJISrT2YTWybKGKQm', 'cabralnicolas91@gmail.com', 1);
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `productos`
+-- Indexes for table `productos`
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`id_producto`);
 
 --
--- Indices de la tabla `usuarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`ID_u`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `productos`
+-- AUTO_INCREMENT for table `productos`
 --
 ALTER TABLE `productos`
   MODIFY `id_producto` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT de la tabla `usuarios`
+-- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID_u` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `ID_u` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
