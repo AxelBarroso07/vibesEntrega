@@ -20,9 +20,17 @@ include 'backend/db/conexion_db.php';
 
 <body> 
     
-    
+    <div class="svg">
+       <a href="index.php">
+       <svg xmlns="http://www.w3.org/2000/svg" height="25" width="25" viewBox="0 0 448 512">
+       <!-- <polygon points="0,50 100,50 100,60 120,50 100,40 100,50" fill="#000" /> -->
+        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+        </a>
+    </div>
     <form method="post" action="">
-        <a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
+    
+        
+        
         <h1>Iniciar sesión</h1>
         <input type="text" name="usuario" placeholder="usuario" required>
         <input type="password" name="contrasenia" placeholder="Contraseña" required>

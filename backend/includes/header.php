@@ -22,7 +22,7 @@ include 'db/conexion_db.php';
         <div class="login-buttons">
             <?php
             if (isset($_SESSION['usuario'])) {
-                echo '<a href="perfil.php"> <i class="fa-regular fa-user"></i> </a>';
+                echo '<div class="icono"><a href="perfil.php">  </a></div>';
                 echo '<span style="color: white;">Bienvenido ' . $_SESSION['usuario'] . '</span>';
 
                 echo '  <form action="logout.php" method="post">

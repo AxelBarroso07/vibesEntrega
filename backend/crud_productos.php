@@ -29,59 +29,69 @@ if (isset($_POST['registrar'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD Productos - VibesAdmin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style-Crud.css">
 </head>
 
 <body>
-    <a href="vibesAdmin.php"> <h2>Volver atras</h2></a>
-    <h1>CRUD - PRODUCTOS</h1>
-    <h2>Productos listados</h2>
-    <?php
-    $sql_select = "SELECT * FROM productos";
-    $consulta = mysqli_query($conexion, $sql_select);
-    if (mysqli_num_rows($consulta) == 0) {
-        echo 'No hay productos registrados';
-    } else {
-        while ($registro = mysqli_fetch_assoc($consulta)) {
-            echo '
-                <div class="producto">
-                    <img src="../img/productos/' . $registro['imagen'] . '" alt="producto">
-                    <div class="datos">
-                        <p>Nombre: ' . $registro['nombre'] . '</p>
-                        <p>Precio: ' . $registro['precio'] . '</p>
-                        <p>Stock: ' . $registro['cantidad_stock'] . '</p>
-                        <p>Información: ' . $registro['informacion'] . '</p>
-                        <p>Talles: ' . $registro['talles'] . '</p>
-                        <div class="buttons">
-                            <a href="crud_productos.php?id_editar=' . $registro['id_producto'] . '&&nombre=' . $registro['nombre'] . '&&precio=' . $registro['precio'] . '&&cantidad_stock=' . $registro['cantidad_stock'] . '"><button><i class="fa-solid fa-pen-to-square"></i></button></a>
-                            <a href="crud_productos.php?id_eliminar=' . $registro['id_producto'] . '"><button><i class="fa-solid fa-trash"></i></button></a>
-                        </div>
-                    </div>
-                </div>';
-        }
-    }
-    ?>
+    <div class="boton">
+        <a href="vibesAdmin.php"> <h2>Volver atras</h2></a>
+    </div>
+    
 
-    <h2>Agregar productos</h2>
-    <form action="" method="post" enctype="multipart/form-data">
-        <label for="nombre">Nombre: </label>
-        <input type="text" name="nombre" id="nombre">
-        <label for="precio">Precio: </label>
-        <input type="number" name="precio" id="precio">
-        <label for="cantidad_stock">Cantidad de stock: </label>
-        <input type="number" name="cantidad_stock" id="cantidad_stock">
-        <label for="informacion">Información: </label>
-        <textarea name="informacion" id="informacion" rows="4"></textarea>
-        <label for="talles">Talles: </label>
-        <select name="talles" id="talles">
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-            <option value="XL">XL</option>
-        </select>
-        <label for="imagen">Imagen del producto: </label>
-        <input type="file" name="imagen" id="imagen" accept="image/*" required>
-        <input type="submit" value="Subir nuevo producto" name="registrar">
-    </form>
+    <div class="productos">
+    <h1>CRUD - PRODUCTOS</h1>
+        <h2>Productos listados</h2>
+        <?php
+        $sql_select = "SELECT * FROM productos";
+        $consulta = mysqli_query($conexion, $sql_select);
+        if (mysqli_num_rows($consulta) == 0) {
+            echo 'No hay productos registrados';
+        } else {
+            while ($registro = mysqli_fetch_assoc($consulta)) {
+                echo '
+                    <div class="producto">
+                        <img src="../img/productos/' . $registro['imagen'] . '" alt="producto">
+                        <div class="datos">
+                            <p>Nombre: ' . $registro['nombre'] . '</p>
+                            <p>Precio: ' . $registro['precio'] . '</p>
+                            <p>Stock: ' . $registro['cantidad_stock'] . '</p>
+                            <p>Información: ' . $registro['informacion'] . '</p>
+                            <p>Talles: ' . $registro['talles'] . '</p>
+                            <div class="buttons">
+                                <a href="crud_productos.php?id_editar=' . $registro['id_producto'] . '&&nombre=' . $registro['nombre'] . '&&precio=' . $registro['precio'] . '&&cantidad_stock=' . $registro['cantidad_stock'] . '"><button><i class="fa-solid fa-pen-to-square"></i></button></a>
+                                <a href="crud_productos.php?id_eliminar=' . $registro['id_producto'] . '"><button><i class="fa-solid fa-trash"></i></button></a>
+                            </div>
+                        </div>
+                    </div>';
+            }
+        }
+        ?>
+    </div>
+    
+    <div class="formulario">
+        <h2>Agregar productos</h2>
+            <form action="" method="post" enctype="multipart/form-data">
+                <label for="nombre">Nombre: </label>
+                <input type="text" name="nombre" id="nombre">
+                <label for="precio">Precio: </label>
+                <input type="number" name="precio" id="precio">
+                <label for="cantidad_stock">Cantidad de stock: </label>
+                <input type="number" name="cantidad_stock" id="cantidad_stock">
+                <label for="informacion">Información: </label>
+                <textarea name="informacion" id="informacion" rows="4"></textarea>
+                <label for="talles">Talles: </label>
+                <select name="talles" id="talles">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+                <label for="imagen">Imagen del producto: </label>
+                <input type="file" name="imagen" id="imagen" accept="image/*" required>
+                <input type="submit" value="Subir nuevo producto" name="registrar">
+            </form>
+    </div>
+    
 
     <?php
     if (isset($_GET['id_editar'])) {

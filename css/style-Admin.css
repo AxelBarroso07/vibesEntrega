@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* background-color: red; */
+   
+}
+body{
+    background-image: url(../img/background-home.jpg);
+    background-size: cover;
+    background-position: center;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+    color: white;
+    font-weight: bold;
+}
+.links {
+    text-align: center;
+    background-color: gray;
+    opacity: 0.8;
+    padding: 10px;
+    margin-left: 550px;
+    margin-right: 550px;
+  }
+
+  .links a {
+    display: block;
+    padding: 10px 0;
+    font-size: 18px;
+    text-decoration: none;
+  }
+
+  .links a:hover {
+    color: #f0f0f0;
+  }
