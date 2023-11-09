@@ -130,7 +130,7 @@ if (isset($_POST['registrar'])) {
         }
 
         $sql_update = "UPDATE productos SET nombre='$nombre_editar', precio='$precio_editar', cantidad_stock='$cantidad_editar', informacion='$informacion_editar', talles='$tallas_editar', imagen='$imagen' WHERE id_producto='$id_editar'";
-        $actualizar = mysqli_query($conexion, $sql_update) ? print("<script>alert('Producto editado');window.location='crud_productos.php'</script>") : print("<script>alert('Error al editar');window.location='crud_productos.php'</script>");
+        $actualizar = mysqli_query($conexion, $sql_update) ? print("<script>window.location='crud_productos.php'</script>") : print("<script>window.location='crud_productos.php'</script>");
     }
 
     if (isset($_GET['id_eliminar'])) {
@@ -144,7 +144,7 @@ if (isset($_POST['registrar'])) {
         // BORRAR LA FOTO DE LA CARPETA IMAGENES
 
         $sql_borrar = "DELETE FROM productos WHERE id_producto='$id_eliminar'";
-        $eliminar = mysqli_query($conexion, $sql_borrar) ? print("<script>alert('Producto eliminado');window.location='crud_productos.php'</script>") : print("<script>alert('Error al borrar');window.location='crud_productos.php'</script>");
+        $eliminar = mysqli_query($conexion, $sql_borrar) ? print("<script>window.location='crud_productos.php'</script>") : print("<script>window.location='crud_productos.php'</script>");
     }
     ?>
 </body>
