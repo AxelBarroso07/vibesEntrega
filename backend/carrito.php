@@ -22,7 +22,7 @@ if (isset($_SESSION['usuario'])) {
             <?php include('includes/header.php'); ?>
         </header> -->
         <section>
-
+            <a href="../index.php"><i class="fa-solid fa-arrow-left"></i></a>
             <p class="title">Carrito</p>
 
             <?php

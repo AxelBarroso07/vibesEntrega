@@ -51,6 +51,7 @@ if (isset($_SESSION['usuario'])) {
 </head>
 
 <body>
+    <a href="../index.php"><i class="fa-solid fa-arrow-left"></i></a>
     <?php
     if (isset($_GET['id'])) {
         $producto_id = $_GET['id'];
@@ -79,7 +80,7 @@ if (isset($_SESSION['usuario'])) {
             echo '<option value="L">L</option>';
             echo '<option value="XL">XL</option>';
             echo '</select>';
-            echo '<a href="carrito.php?ID_prod='.$id.'"><button>Comprar</button></a>';
+            echo '<a href="carrito.php?ID_prod=' . $id . '"><button>Comprar</button></a>';
             echo '</div>';
             echo '</div>';
         } else {
