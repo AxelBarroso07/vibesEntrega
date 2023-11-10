@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.carrito {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+
+a.comprar {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    margin: 10px 0;
+    font-family: 'Poppins', sans-serif; /* Fuente Poppins */
+    border-bottom: 1px solid #000; /* Línea inferior */
+    text-align: center;
+    text-decoration: none;
+
+}
+
+a.comprar:hover {
+    color: var(--acento);
+}
+
+.link {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+p{
+    font-size: 18px;
+    margin: 10px 0;
+    font-family: 'Poppins', sans-serif; /* Fuente Poppins */
+}
+
+p.total {
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin: 15px 0;
+    text-align: center;
+}
+
+p.SubTotal {
+    font-size: 1em;
+    font-weight: bolder;
+    margin: 10px 0;
+    text-align: right;
+}
+
+p.eliminar {
+    text-align: right;
+}
