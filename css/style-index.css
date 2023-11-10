@@ -20,12 +20,12 @@ header {
     
 }
 
-/* h1 {
+h1 {
     color: #fff;
     font-size: 36px;
     margin: 0;
     font-weight: bold;
-} */
+}
 
 
 
@@ -77,6 +77,15 @@ header {
     
 }
 
+#contacto{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    background-color: #000;
+}
+
+
 @media only screen and (max-width: 630px) {
     header {
         background-color: rgba(0, 0, 0, 0.8); 
@@ -104,10 +113,3 @@ header {
         display: none;
     }
 }
-.icono{
-    
-}
-
-
- 
-
