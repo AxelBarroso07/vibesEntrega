@@ -1,6 +1,6 @@
 <?php
 function mostrarProductos(){
-    include('db/conexion.php');
+    include('db/conexion_db.php');
     $sql="SELECT * FROM articles";
     $consulta=mysqli_query($conexion, $sql);
     while($registro=mysqli_fetch_assoc($consulta)){
@@ -22,7 +22,7 @@ function mostrarCarrito(){
     <div class="carrito">
         <div class="producto">
             <p class="eliminar"><a href="carrito.php?id_borrar='.$producto['ID_prod'].'"><i class="fa-solid fa-trash"></i></a></p>
-            <img src="images/'.$producto['img_prod'].'" alt="">
+            <img src="../img/productos/'.$producto['img_prod'].'" alt="">
             <p>'.$producto['nbr_prod'].'</p>
             <p>Cantidad:<a href="carrito.php?id_restar='.$producto['ID_prod'].'"><i class="fa-regular fa-square-minus"></i></a> | '.$producto['cantidad'].' | <a href="carrito.php?id_sumar='.$producto['ID_prod'].'"><i class="fa-regular fa-square-plus"></i></a> </p>
             <p>Precio Unit: $'.$producto['precio_prod'].'</p>
@@ -36,7 +36,7 @@ function mostrarCarrito(){
         <a href="carrito.php?finCompra" class="comprar" onClick="return confirm(\'Seguro desea proceder a comprar\')">Finalizar Compra</a>
     <div class="link">
         <a href="carrito.php?vaciarCarrito">Vaciar Carrito</a>
-        <a href="index.php">Seguir Comprando</a>
+        <a href="../index.php">Seguir Comprando</a>
         </div>
     </div>';
 }
@@ -44,23 +44,23 @@ function mostrarCarrito(){
 function mostrarCarritoVacio(){
     echo '
     <div class="carrito">
-    <div class="error">Carrito vacio <a href="index.php">Ir a Tienda</a></div>
+    <div class="error">Carrito vacio <a href="../index.php">Ir a Tienda</a></div>
     </div>';
 }
 
 function agregarProdCarrito($ID_prod){
-    include('db/conexion.php');
-    $sql="SELECT * FROM articles WHERE ID_art = '$ID_prod'";
+    include('db/conexion_db.php');
+    $sql="SELECT * FROM productos WHERE id_producto = '$ID_prod'";
     $consulta=mysqli_query($conexion, $sql);
     $registro=mysqli_fetch_assoc($consulta);
     if(!isset($_SESSION['carrito'])){
         $primer_prod[]= array(
-                    'ID_prod'=>$registro['ID_art'],
-                    'img_prod'=> $registro['Img_art'],
-                    'nbr_prod'=>$registro['Name_art'],
-                    'precio_prod'=>$registro['Price_art'],
+                    'ID_prod'=>$registro['id_producto'],
+                    'img_prod'=> $registro['imagen'],
+                    'nbr_prod'=>$registro['nombre'],
+                    'precio_prod'=>$registro['precio'],
                     'cantidad' => 1,
-                    'stock' =>$registro['Stock_art']
+                    'stock' =>$registro['cantidad_stock']
                     );
         $_SESSION['carrito'] = $primer_prod;
     }else{
@@ -69,12 +69,12 @@ function agregarProdCarrito($ID_prod){
         if(!ExisteYaProdEnCarrito($ID_prod)){
 
         $nuevo_prod= array(
-                    'ID_prod'=>$registro['ID_art'],
-                    'img_prod'=> $registro['Img_art'],
-                    'nbr_prod'=>$registro['Name_art'],
-                    'precio_prod'=>$registro['Price_art'],
+                    'ID_prod'=>$registro['id_producto'],
+                    'img_prod'=> $registro['imagen'],
+                    'nbr_prod'=>$registro['nombre'],
+                    'precio_prod'=>$registro['precio'],
                     'cantidad' => 1,
-                    'stock' =>$registro['Stock_art']
+                    'stock' =>$registro['cantidad_stock']
                     );
         array_push($carrito, $nuevo_prod);
         $_SESSION['carrito'] = $carrito;
@@ -141,4 +141,3 @@ function restarCantProd($id_restar){
 }
 
 function finalizarCompra(){}
-?>

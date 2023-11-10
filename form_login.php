@@ -18,9 +18,9 @@ include 'backend/db/conexion_db.php';
     <title>Iniciar sesion</title>
 </head>
 
-<body> 
-    
-    
+<body>
+
+
     <form method="post" action="">
         <a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
         <h1>Iniciar sesión</h1>
@@ -31,6 +31,10 @@ include 'backend/db/conexion_db.php';
     </form>
 
     <?php
+    if (isset($_GET['senial'])) {
+        echo '<div class="envoltura"><div class="texto">Para utilizar el carrito debe ingresar al sistema</div></div>';
+    }
+
     if (isset($_POST['ingresar'])) {
 
         session_start();
@@ -57,12 +61,10 @@ include 'backend/db/conexion_db.php';
                     $_SESSION['usuarioAdmin'] = $usuario;
                     $_SESSION['emailAdmin'] = $registroAdmin['email'];
                     header("location:backend/vibesAdmin.php");
-                }
-                else{
+                } else {
                     echo '<div class="envoltura"><div class="texto">Contraseña incorrecta</div></div>';
                 }
-            }
-            else {
+            } else {
                 echo '<div class="envoltura"><div class ="texto"> El usuario no existe o no valido el correo </div></div>';
                 session_destroy();
             }

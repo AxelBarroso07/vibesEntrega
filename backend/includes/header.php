@@ -18,8 +18,11 @@ include 'db/conexion_db.php';
 
 <body>
     <nav class="navbar">
-        <a href="../index.php"><h1>vibes</h1></a>
+        <a href="../index.php">
+            <h1>vibes</h1>
+        </a>
         <div class="login-buttons">
+        <a href="carrito.php"><i class="fa-solid fa-cart-shopping"></i></a>
             <?php
             if (isset($_SESSION['usuario'])) {
                 echo '<a href="perfil.php"> <i class="fa-regular fa-user"></i> </a>';
@@ -28,6 +31,8 @@ include 'db/conexion_db.php';
                 echo '  <form action="logout.php" method="post">
     <button type="submit" class="logout-button">Cerrar Sesión</button>
 </form>';
+            } else {
+                echo '<a href="./form_login.php" style="color: white;">INICIO SESION</a> <span style="color: white;">/</span> <a href="./form_registro.php" style="color: white;">REGISTRO</a>';
             }
             ?>
         </div>
