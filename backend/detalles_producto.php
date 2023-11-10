@@ -1,5 +1,11 @@
 <?php
+session_start();
 include('db/conexion_db.php');
+
+if (isset($_SESSION['usuario'])) {
+    $nombre = $_SESSION['usuario'];
+    $email = $_SESSION['email'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +60,7 @@ include('db/conexion_db.php');
 
         if (mysqli_num_rows($consulta) == 1) {
             $producto = mysqli_fetch_assoc($consulta);
-
+            $id = $producto['id_producto'];
             $nombre = $producto['nombre'];
             $precio = $producto['precio'];
             $imagen = $producto['imagen'];
@@ -73,7 +79,7 @@ include('db/conexion_db.php');
             echo '<option value="L">L</option>';
             echo '<option value="XL">XL</option>';
             echo '</select>';
-            echo '<button>Comprar</button>';
+            echo '<a href="carrito.php?ID_prod='.$id.'"><button>Comprar</button></a>';
             echo '</div>';
             echo '</div>';
         } else {

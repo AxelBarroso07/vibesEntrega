@@ -30,6 +30,7 @@ include './backend/db/conexion_db.php';
     <div class="login-buttons">
       <?php
       if (isset($_SESSION['usuario'])) {
+        echo '<a href="backend/carrito.php"><i class="fa-solid fa-cart-shopping"></i></a>';
         echo '<a href="backend/perfil.php"> <i class="fa-regular fa-user"></i> </a>';
         echo '<span style="color: white;">Bienvenido ' . $_SESSION['usuario'] . '</span>';
 
