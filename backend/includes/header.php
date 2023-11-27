@@ -22,7 +22,7 @@
 <body>
   <div class="nav-complete">
   <nav class="navbar">
-  <h1 id="vibesHeader">vibes</h1>
+  <h1 id="vibesHeader">VIBES</h1>
     
     <div class="login-buttons">
     <?php
