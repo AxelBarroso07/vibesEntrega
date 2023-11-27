@@ -1,8 +1,3 @@
-<?php
-
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,24 +17,28 @@
 <body>
   <div class="nav-complete">
   <nav class="navbar">
-  <h1 id="vibesHeader">vibes</h1>
+  <a href="../index.php" style="font-family: 'Times New Roman', Times, serif;"><h1 id="vibesHeader" >vibes</h1></a>
     
     <div class="login-buttons">
     <?php
 if (isset($_SESSION['usuario'])) {
-  echo '<a href="backend/perfil.php"><span">' . $_SESSION['usuario'] . '</span></a>';
-    echo '<a href="backend/carrito.php">Carrito</a>';
+  echo '<a href="../backend/perfil.php"><span">' . $_SESSION['usuario'] . '</span></a>';
+    echo '<a href="../backend/carrito.php">Carrito</a>';
   
 
 
    
 } else if (isset($_SESSION['usuarioAdmin'])) {
-    echo '<a href="backend/vibesAdmin.php"> <i class="fa-solid fa-gear"></i> </a>';
-    echo '<span ">Bienvenido admin ' . $_SESSION['usuarioAdmin'] . '</span>';
+  
+    echo '<div class="buttons"> ';
+    echo '<a href="backend/carrito.php">Carrito</a>';
+    echo '<a class="nombreAdmin" href="../backend/vibesAdmin.php">'.$_SESSION['usuarioAdmin'].'</a>';
+ 
+      
 
-    echo '  <form action="backend/logout.php" method="post">
-    <button type="submit" class="logout-button">Cerrar Sesión</button>
-</form>';
+    echo '<a href="../backend/logout.php" class="logout-button">Salir</a> </div>';
+
+
 } else {
     $loginText = (basename($_SERVER['PHP_SELF']) == 'form_login.php') ? '¿No tienes cuenta?' : 'Iniciar sesión';
     $loginLink = (basename($_SERVER['PHP_SELF']) == 'form_login.php') ? './form_registro.php' : './form_login.php';

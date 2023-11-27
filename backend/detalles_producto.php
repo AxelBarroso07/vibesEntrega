@@ -42,6 +42,7 @@ if (isset($_SESSION['usuario'])) {
             $informacion = $producto['informacion'];
             echo '<div class="container">';
             echo '<div class="product-info">';
+            echo '<h3 class="nombre-prenda">"' . $nombre . '"</h3>';
             echo '<select name="size">';
             echo '<option value="S">S</option>';
             echo '<option value="M">M</option>';
@@ -58,7 +59,7 @@ if (isset($_SESSION['usuario'])) {
             echo '<div class="container-image-title">';
             // Ajusta el ancho y alto según tus necesidades
             echo '<img id="product-img" src="../img/productos/' . $imagen . '" alt="' . $nombre . '" width="400" height="500">';
-            echo '<h1>' . $nombre . '</h1>';
+         
             echo '</div>';
 
            

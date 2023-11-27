@@ -140,4 +140,4 @@ function restarCantProd($id_restar){
     }
 }
 
-function finalizarCompra(){}
+
