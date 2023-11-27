@@ -24,7 +24,7 @@ session_start();
 <body>
   <div class="nav-complete">
   <nav class="navbar">
-  <a href="../index.php" style="font-family: 'Times New Roman', Times, serif;"><h1 id="vibesHeader" >vibes</h1></a>
+  <a href="index.php" style="font-family: 'Times New Roman', Times, serif;"><h1 id="vibesHeader" >vibes</h1></a>
     
     <div class="login-buttons">
     <?php

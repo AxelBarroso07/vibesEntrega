@@ -61,7 +61,7 @@ while ($registro = mysqli_fetch_assoc($consulta)) {
 
     <div class="image-container">
 
-            <a href="./backend/detalles_producto.php?id=' . $registro['id_producto'] . '">
+            <a href="detalles_producto.php?id=' . $registro['id_producto'] . '">
 
                 <img src="img/productos/' . $registro['imagen'] . '" alt="producto">
 
