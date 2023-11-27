@@ -1,4 +1,4 @@
-Axel hizo el back de enviar correo y su css. Actualizacion de header, seccion contacto, hizo el apartado de cada producto, agregó campos en la base de datos.
+Axel actualizó el front
 
 Luciana hizo el frontend del Home con html y css, realizo el diseño de "perfil.php" cuando inicien sesion,
 y evitar los emails de registro duplicados, y diseño a pantallas blancas

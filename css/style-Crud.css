@@ -1,141 +1,163 @@
 * {
-    margin: 0;
     padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-image: url(../img/background-home.jpg);
-    background-size: cover;
-    background-position: center;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
     margin: 0;
-  }
-  
-  .productos {
-    background-color: gray;
-    opacity: 0.8;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    width: 60%;
-    padding: 20px;
-    margin-left: 10px;
-    margin-right: 400px;
-    margin-top: 160px; 
-  }
-  
-  .producto {
-    display: flex;
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 20px;
-   
-  }
-  
-  .producto img {
-    max-width: 100px;
-    max-height: 100px;
-    margin-right: 20px;
-  }
-  
-  .datos {
-    text-align: left;
-  }
-  
-  .buttons {
-    margin-top: 10px;
-  }
-  
-  button {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  
-  button i {
-    margin-right: 5px;
-  }
-  
-  .formulario {
-    background-color: gray;
-    opacity: 0.8;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    width: 30%;
-    padding: 20px;
-    margin-top: 20px; 
-    margin-left: 5px;
-    margin-right: 30px;
-  }
-  
-  .formulario h2 {
-    margin-bottom: 20px;
-  }
-  
-  .formulario label {
-    display: block;
-    margin-top: 10px;
-  }
-  
-  .formulario input[type="text"],
-  .formulario input[type="number"],
-  .formulario select,
-  .formulario textarea,
-  .formulario input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    /* border-radius: 5px; */
-    margin-bottom: 15px;
-  }
-  
-  .formulario input[type="submit"] {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  .boton {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    position: absolute;
-    top: 20px; 
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .boton h2:hover{
-    color:yellow;
-  }
-  
-  .boton a {
-    text-decoration: none;
-    /* background-color: gray;
-    opacity: 0.8; */
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    display: inline-block;
-  }
-p{
-    font-family: 'Poppins', sans-serif;
-    
+    box-sizing: border-box;
 }
 
-  
-  
-  
-  
-  
-  
-  
+body {
+    font-family: 'poppins', sans-serif;
+}
+
+.general {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.producto {
+    background-image: url(../img/pattern.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative
+}
+
+.container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-image {
+    padding: 80px 100px;
+    background-color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.image-file{
+    padding: 20px;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #000;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.button-ver-stock {
+    background-color: #fff;
+    color: inherit;
+    border: 2px solid #000;
+    padding: 15px;
+    font-weight: bold;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+span {
+    font-weight: bold;
+}
+
+.link {
+    text-decoration: none;
+    color: #000;
+}
+
+.descripcion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.descripcion form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+::placeholder {
+    color: #000;
+    font-weight: 500;
+    font-size: 1rem;
+    font-family: 'poppins', sans-serif;
+}
+
+input[type="number"] {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #000;
+    margin-bottom: 10px;
+ 
+}
+
+input[type="text"] {
+
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #000;
+    margin-bottom: 10px;
+
+}
+
+textarea {
+    border: 2px solid #000;
+text-align: center;
+    padding: 20px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+select {
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: 2px solid #000;
+    padding: 20px;
+}
+
+input[type="submit"] {
+    margin-bottom: 10px;
+    background: none;
+    color: inherit;
+    border: 2px solid #000;
+    padding: 5px 60px;
+    background-image: url(../img/pattern-button.png);
+    font-weight: bold;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    width: 100%;
+}
+
+input, select, textarea{
+    width: 100%;
+}
+.title {
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+
+i {
+    font-size: 20px;
+}
+
+.button-back {
+    position: absolute;
+    background-color: #fff;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    border-radius: 0px 0px 20px 0px;
+}
+
+

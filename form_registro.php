@@ -1,6 +1,5 @@
 <?php
 include 'backend/db/conexion_db.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -19,74 +18,59 @@ include 'backend/db/conexion_db.php';
 </head>
 
 <body>
-    <div class="container">
-    
-        <div class="columna">
-        
-            <div class="background-color"></div>
+    <section id="registro">
+        <?php include 'includes/header.php';?>
+        <div class="container">
+            <form action="" method="post" class="registro-form">
             
-            <form action="" method="post" class="form">
-            <a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
                 <input type="text" name="usuario" placeholder="Usuario" required>
                 <input type="password" name="contrasenia" placeholder="Contraseña" required>
                 <input type="email" name="email" placeholder="Email" required>
+            
                 <input type="submit" name="registrar" value="registrar">
             </form>
 
             <?php
-            if (isset($_POST['registrar'])) {
-                $email = $_POST['email'];
-                $emailQuery = "Select * from usuarios where email = \"$email\"";
-                $emailInUse = mysqli_num_rows(mysqli_query($conexion, $emailQuery));
-                if ($emailInUse >= 1) {
-                    echo '<p class="texto"> Email ya en uso, utilize otro. </p>';
-                } else {
-                    $Nbr_u = $_POST['usuario'];
-                    $contrasenia = $_POST['contrasenia'];
-                    $token = time();
+    if (isset($_POST['registrar'])) {
+        $email = $_POST['email'];
+        $emailQuery = "Select * from usuarios where email = \"$email\"";
+        $emailInUse = mysqli_num_rows(mysqli_query($conexion, $emailQuery));
+        if ($emailInUse >= 1) {
+            echo '<p class="texto"> Email ya en uso, utilize otro. </p>';
+        } else {
+            $Nbr_u = $_POST['usuario'];
+            $contrasenia = $_POST['contrasenia'];
+            $token = time();
 
-                    $Pass_u = password_hash($contrasenia, PASSWORD_DEFAULT);
+            $Pass_u = password_hash($contrasenia, PASSWORD_DEFAULT);
 
-                    $sql = "INSERT INTO usuarios (Nbr_u, Pass_u, email, token) VALUES ('$Nbr_u', '$Pass_u', '$email', '$token')";
-                    $insertar = mysqli_query($conexion, $sql);
-
-
-            ?>
-                    <script>
-                        let url_final = 'https://formsubmit.co/ajax/<?php echo $email; ?>'
-                        let usuario = '<?php echo $Nbr_u; ?>';
-                        let mensaje = 'valide su correo: https://localhost/vibesEntrega/backend/registrar.php?token=<?php echo $token; ?>';
-
-
-                        $.ajax({
-                            method: 'POST',
-                            url: url_final,
-                            dataType: 'json',
-                            accepts: 'application/json',
-                            data: {
-                                name: usuario,
-                                message: mensaje,
-                            },
-                            success: (data) => window.location = 'backend/registrar.php?send=1',
-                            error: (err) => window.location = 'backend/registrar.php?send=0',
-                        });
-                    </script>
-            <?php
-                }
-            }
-            ?>
-
-
-        </div>
-        <div class="columna">
-            <img src="./img/fondoregistro.jpg" alt="Tu imagen" class="imagen">
-        </div>
-    </div>
-
-    <?php
-
-
+            $sql = "INSERT INTO usuarios (Nbr_u, Pass_u, email, token) VALUES ('$Nbr_u', '$Pass_u', '$email', '$token')";
+            $insertar = mysqli_query($conexion, $sql);
     ?>
+            <script>
+                let url_final = 'https://formsubmit.co/ajax/<?php echo $email; ?>'
+                let usuario = '<?php echo $Nbr_u; ?>';
+                let mensaje = 'valide su correo: http://localhost/Vibess/vibesEntrega/backend/registrar.php?token=<?php echo $token; ?>';
+
+                $.ajax({
+                    method: 'POST',
+                    url: url_final,
+                    dataType: 'json',
+                    accepts: 'application/json',
+                    data: {
+                        name: usuario,
+                        message: mensaje,
+                    },
+                    success: (data) => window.location = 'backend/registrar.php?send=1',
+                    error: (err) => window.location = 'backend/registrar.php?send=0',
+                });
+            </script>
+    <?php
+        }
+    }
+    ?>
+ </div>
+    </section>
 </body>
 
 </html>

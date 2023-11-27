@@ -1,80 +1,83 @@
-/* Estilos existentes */
-
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+html, body {
+    height: 100%;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
     display: flex;
-    width: 100%;
-}
-
-.columna {
-    width: 50%;
-    padding: 20px;
-    overflow: hidden;
-    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-.imagen {
-    width: 100%;
-    height: calc(100vh - 45px);
-    object-fit: cover;
-}
-
-/* Estilos para el formulario */
-
 form {
-    text-align: center;
-    margin: 0 auto;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"] {
-    display: block;
-    text-decoration: none;
-    outline: none;
-    font-size: 16px;
-    background-color: transparent;
-    font-family: 'Poppins', sans-serif;
-    cursor: pointer;
-    border: none;
-    border-bottom: 2px solid #000;
-    color: #000;
-    margin: 10px 0;
-    width: 100%; /* Ajustamos el ancho al 100% */
-}
-
-form input[type="submit"] {
-    padding: 10px;
-    border-radius: 10px;
-    outline: none;
-    font-size: 16px;
-    background-color: transparent;
-    font-family: 'Poppins', sans-serif;
-    cursor: pointer;
-    border: 1px solid #000;
-    color: #000;
-    margin-top: 10px;
-}
-.texto{
-    text-align: center;
-    color: red; 
-    font-family: 'Poppins', sans-serif;
-    margin-top: 10px; 
-    font-weight: bold;
-}
-.svg{
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 7rem;
+    padding-left: 3.5rem;
+    padding-top: 0.5rem;
+    margin-bottom: 20px; 
+}
+
+form.registro-form input[type="text"],
+form.registro-form input[type="password"],
+form.registro-form input[type="email"] {
+    appearance: none;
+    background-color: transparent;
+    border: none; 
+    border-bottom: 1px solid #000; 
+    padding: 8px;
+    margin: 5px 0;
+    font-size: 2rem;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    cursor: pointer;
+}
+
+form.registro-form input[type="submit"] {
+    cursor: pointer;
+    color: #000; 
+    border: 1px solid #000; 
+    margin-top: 5%; 
+    margin-bottom: 5%;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 2rem;
+    background-color: white;
+}
+
+form.registro-form a {
+    color: #000;
+    text-decoration: underline;
+    text-align: center;
+}
+
+form.registro-form input[type="text"]::placeholder,
+form.registro-form input[type="password"]::placeholder,
+form.registro-form input[type="email"]::placeholder {
+    color: #000; 
+}
+
+.texto{
+    font-family: 'Roboto', sans-serif;
+  font-weight: bold;
 }
