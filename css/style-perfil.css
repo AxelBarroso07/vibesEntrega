@@ -1,5 +1,68 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
+
+
+
+.container-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  justify-content:center;
+    position: relative; /* Importante para el posicionamiento del botón */
+}
+
+.botones-container {
+    display: flex;
+    margin-bottom: 10px; /* Agregado para separar los botones */
+}
+
+button {
+    appearance: none;
+    background-color: transparent;
+   
+    padding: 8px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    cursor: pointer;
+    margin-right: 10px; /* Agregado para separar los botones */
+}
+
+button[type="submit"] {
+    cursor: pointer;
+    color: #000;
+    
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.5rem;
+    background-color: white;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.datos,
+.pedidos {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px; /* Agregado para separar datos y pedidos del resto */
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
 }

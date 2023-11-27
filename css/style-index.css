@@ -16,7 +16,17 @@ body::-webkit-scrollbar {
   }
 
 
-  
+  a{
+    font-family: 'Roboto', sans-serif;
+ 
+    margin: 10px;
+
+  }
+
+  p, .parrafo{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+  }
  
 
   
@@ -49,35 +59,7 @@ section {
 
 
 
-#productos{
 
-  
-    background-color: #f2f2f2;
-    display: flex;
-    justify-content: space-around;
-
-    flex-wrap: wrap;
-   
-    height: 150vh; /* Set a fixed height for the section */
-    overflow: auto; /* Enable scrolling when content overflows the height */
-    scrollbar-color: transparent transparent; /* thumb and track color */
-    scrollbar-width: thin; /* width of the scrollbar */
-
-    
-}
-#productos::-webkit-scrollbar {
-  width: 1px;
-  display: none; /* Oculta el scrollbar */
-}
-
-
-#productos::-webkit-scrollbar-thumb {
-  background-color: transparent;
-}
-
-#productos::-webkit-scrollbar-track {
-  background-color: transparent;
-}
 
 #contacto{
     background-color: #f2f2f2;
@@ -104,23 +86,20 @@ h1{
     padding-left: 3rem;
 }
 
+a:link, :visited, :active{
+  text-decoration: none;
+  color: #000;
+  
+}
 
 .login-buttons:link, :visited, :active{
     text-decoration: none;
     color: #000;
     
 }
+  
 
 
-a{
-    font-family: 'Roboto', sans-serif;
-    font-weight: lighter;
-    cursor: pointer;
-    text-decoration: none;
-    margin: 5px;
-    padding-right: 5px;
-    font-size: 1.5rem;
-}
 
 
 .navbar {
@@ -146,76 +125,31 @@ a{
 
 
 
-.search {
-  padding: 20px; 
-  width: 100%; /* Set to 100% */
 
-  background-color: #000;
-  color: #fff;
+
+
+
+
+
+
+.logout-button:link, :visited, :active{
   text-decoration: none;
-  border: none; /* Elimina el borde, si lo hay */
-  outline: none;
-  font-family: 'Roboto', sans-serif;
-  font-weight: lighter;
-  cursor: pointer;
-}
-::placeholder{
-  color: #fff;
-}
-form {
-  padding: 10% 5% 2%; /* Ajusta el espacio inferior del formulario */
-  width: 90%;
-
+  color: #000;
+  
 }
 
 
-
-.search-container{
-  padding: 10px; /* Agrega un espaciado alrededor del contenedor */
+.login-buttons {
   display: flex;
-  align-items: center; /* Alinea los elementos verticalmente en el centro */
-
-  background-color: #f2f2f2; /* Color de fondo del contenedor */
-  width: 100%; /* Ocupa el ancho completo de su contenedor */
-
-}
-
-details{
-  font-family: 'Roboto', sans-serif;
-  font-weight: lighter;
-  font-size: 1.5rem;
-  padding: 10% 0 2%;
-}
-
-/* Estilos para ocultar la flecha del details */
-details {
-  margin-right: 10px; /* Ajusta el margen derecho del details */
-}
-
-summary {
-  list-style-type: none; /* Oculta la flecha del summary dentro de details */
-  cursor: pointer; /* Agrega un cursor indicando que es interactivo */
-  display: inline-block; /* Asegura que el summary ocupe solo el espacio que necesita */
-}
-
-/* Estilos para el menú desplegable */
-details[open] summary + * {
-  width: 100%; /* Cambiado a 100% para ocupar todo el ancho */
-  height: 50%;
-  position: absolute;
-
-  left: 0;
-  background-color: #f2f2f2;
-
-}
-
-/* Ajusta el padding del menú desplegable si es necesario */
-details[open] summary + * {
-  padding: 10px; /* Ajusta según sea necesario */
+  align-items: center;
+ 
 }
 
 
-details[open] summary + * {
-  max-height: 200px; /* Ajusta la altura deseada al abrir el menú */
-  margin-top: 20px; /* Ajusta el margen superior al abrir el menú */
+
+.buttons{
+display: flex;
+
+text-align: center;
+margin: 20px;
 }

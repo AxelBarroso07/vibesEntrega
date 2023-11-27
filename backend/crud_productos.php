@@ -43,7 +43,7 @@ if (isset($_POST['registrar'])) {
 
         <div class="producto">
             <div class="button-back">
-                <i class="fa-solid fa-arrow-left" style="color: #000000;"></i>
+               <a href="vibesAdmin.php"><i class="fa-solid fa-arrow-left" style="color: #000000;"></i></a> 
             </div>
             <div class="container">
                 <div class="card-image">+</div>

@@ -18,15 +18,17 @@ if (isset($_SESSION['usuarioAdmin'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style-Admin.css">
+    <link rel="stylesheet" href="../css/style-index.css">
     <title>Vibes Admin</title>
 </head>
 <body>
-    <?php echo '<h1>BIENVENIDO ADMIN:<br> ' . $nombre . '</h1> '; ?>
+<?php include 'includes/header.php'; ?>
 
     <div class="links">
-        <a href="crud_productos.php"><h2>ADMINISTRAR PRODUCTOS DE LA TIENDA <hr></h2></a>
-        <a href=""><h2>HISTORIAL DE VENTAS<hr></h2></a>
-        <a href="../index.php"><h2>VOLVER A VIBES<hr></h2></a>
+  
+        <a href="crud_productos.php"><h2>ADMINISTRAR PRODUCTOS DE LA TIENDA </h2></a>
+        <a href=""><h2>HISTORIAL DE VENTAS</h2></a>
+        <a href="../index.php"><h2>VOLVER A VIBES</h2></a>
     </div>
 
 </body>
