@@ -4,28 +4,27 @@
     box-sizing: border-box;
 }
 
+
+
+html,
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    
+  height: 100%;
+  
+
+}
+section {
+  height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.datos{
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
 }
 
 
-
-.container-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  justify-content:center;
-    position: relative; /* Importante para el posicionamiento del botón */
-}
-
-.botones-container {
-    display: flex;
-    margin-bottom: 10px; /* Agregado para separar los botones */
-}
 
 button {
     appearance: none;
@@ -36,13 +35,12 @@ button {
     font-family: 'Roboto', sans-serif;
     font-weight: lighter;
     cursor: pointer;
-    margin-right: 10px; /* Agregado para separar los botones */
+    margin-bottom: 10px;
 }
 
 button[type="submit"] {
     cursor: pointer;
     color: #000;
-    
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
     font-weight: lighter;
@@ -54,18 +52,22 @@ button[type="submit"] {
     bottom: 10px;
     left: 10px;
 }
-form {
-    padding: 10% 5% 2%;
-    width: 90%;
-  }
-  
-.datos,
-.pedidos {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 20px; /* Agregado para separar datos y pedidos del resto */
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+    .container-details {
+        align-items: center;
+    }
+
+    .botones-container {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+   
 }
