@@ -4,7 +4,7 @@ const buscar_prod=(buscar)=>{
     $.ajax({
         data: parametros,
         type: 'POST',
-        url: 'includes/buscador.php',
+        url: './includes/buscador.php',
         success: function(data) {
             document.getElementById("datos_buscador").innerHTML = data ;
         }

@@ -20,12 +20,12 @@ if (isset($_SESSION['usuario'])) {
 
     <body>
         <!-- <header>
-            <?php include('includes/header.php'); ?>
+           
         </header> -->
         <section>
-            <a href="../index.php"><i class="fa-solid fa-arrow-left"></i></a>
-            <p class="title">Carrito</p>
-
+        <?php include 'includes/header.php'; ?>
+           
+<div class="container-cart">
             <?php
             if (isset($_GET['ID_prod'])) {
                 // Agregar producto a carrito
@@ -58,7 +58,7 @@ if (isset($_SESSION['usuario'])) {
                 mostrarCarritoVacio();
             }
             ?>
-
+</div>
         </section>
     </body>
 

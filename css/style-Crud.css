@@ -9,14 +9,12 @@ body {
 }
 
 .general {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .producto {
-    background-image: url(../img/pattern.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -132,7 +130,7 @@ input[type="submit"] {
     padding: 5px 60px;
     background-image: url(../img/pattern-button.png);
     font-weight: bold;
-    color: #fff;
+    color: #000;
     font: inherit;
     cursor: pointer;
     outline: inherit;
@@ -153,11 +151,18 @@ i {
 
 .button-back {
     position: absolute;
-    background-color: #fff;
     left: 0;
     top: 0;
     padding: 20px;
-    border-radius: 0px 0px 20px 0px;
+    text-decoration: none;
+    outline: inherit;
 }
 
 
+.button-back:link,
+:visited,
+:active {
+  text-decoration: none;
+  color: #000;
+  outline: inherit;
+}

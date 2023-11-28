@@ -24,15 +24,15 @@ session_start();
 <body>
   <div class="nav-complete">
   <nav class="navbar">
-  <a href="index.php" style="font-family: 'Times New Roman', Times, serif;"><h1 id="vibesHeader" >vibes</h1></a>
+  <a href="./index.php" style="font-family: 'Times New Roman', Times, serif;"><h1 id="vibesHeader" >vibes</h1></a>
     
     <div class="login-buttons">
     <?php
 if (isset($_SESSION['usuario'])) {
 
-  echo '<a href="backend/productos.php">Productos</a>';
-  echo '<a href="backend/perfil.php"><span">' . $_SESSION['usuario'] . '</span></a>';
-    echo '<a href="backend/carrito.php">Carrito</a>';
+  echo '<a href="./backend/productos.php">Productos</a>';
+  echo '<a  href="./backend/perfil.php"><span">' . $_SESSION['usuario'] . '</span></a>';
+    echo '<a href="./backend/carrito.php">Carrito</a>';
 
   
 

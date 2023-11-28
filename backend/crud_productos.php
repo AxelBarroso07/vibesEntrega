@@ -40,20 +40,17 @@ if (isset($_POST['registrar'])) {
 <body>
 
     <section class="general">
-
+    <div class="button-back">
+               <a href="vibesAdmin.php">Volver</a> 
+            </div>
         <div class="producto">
-            <div class="button-back">
-               <a href="vibesAdmin.php"><i class="fa-solid fa-arrow-left" style="color: #000000;"></i></a> 
-            </div>
+       
             <div class="container">
-                <div class="card-image">+</div>
-                <div class="button-stock">
-                <button class="button-ver-stock"><a class="link" href="ver_producto.php"><span>Ver stock</span></a></button>
-                </div>
-            </div>
-        </div>
+               
+             
 
         <div class="descripcion">
+        
             <h1 class="title">Subida de productos</h1>
             <form action="" method="post" class="formulario" enctype="multipart/form-data">
               
@@ -83,6 +80,11 @@ if (isset($_POST['registrar'])) {
                     <input type="submit" class="enviar" value="Enviar" name="registrar">
                 </div>
             </form>
+            <div class="button-stock">
+                <button class="button-ver-stock"><a class="link" href="ver_producto.php"><span>Ver stock</span></a></button>
+                </div>
+            </div>
+        </div>
         </div>
 
     </section>

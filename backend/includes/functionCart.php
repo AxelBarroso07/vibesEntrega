@@ -14,37 +14,36 @@ function mostrarProductos(){
     };
 }
 
-function mostrarCarrito(){
-    $carrito = $_SESSION['carrito'];
-    $total=0;
-    foreach ($carrito as $indice => $producto) {
-    echo '
-    <div class="carrito">
-        <div class="producto">
-            <p class="eliminar"><a href="carrito.php?id_borrar='.$producto['ID_prod'].'"><i class="fa-solid fa-trash"></i></a></p>
-            <img src="../img/productos/'.$producto['img_prod'].'" alt="">
-            <p>'.$producto['nbr_prod'].'</p>
-            <p>Cantidad:<a href="carrito.php?id_restar='.$producto['ID_prod'].'"><i class="fa-regular fa-square-minus"></i></a> | '.$producto['cantidad'].' | <a href="carrito.php?id_sumar='.$producto['ID_prod'].'"><i class="fa-regular fa-square-plus"></i></a> </p>
-            <p>Precio Unit: $'.$producto['precio_prod'].'</p>
-            <p class="SubTotal">Subtotal: $'.$producto['cantidad'] * $producto['precio_prod'].'</p>
-            <hr>  
+
+    function mostrarCarrito(){
+        $carrito = $_SESSION['carrito'];
+        $total=0;
+        echo '<div class="carrito">';
+        foreach ($carrito as $indice => $producto) {
+            echo '<div class="producto">
+                    <p class="eliminar"><a href="carrito.php?id_borrar='.$producto['ID_prod'].'"><i class="fa-solid fa-trash"></i></a></p>
+                    <img src="../img/productos/'.$producto['img_prod'].'" alt="">
+                    <p>'.$producto['nbr_prod'].'</p>
+                    <p>Cantidad:<a href="carrito.php?id_restar='.$producto['ID_prod'].'"><br><i class="fa-regular fa-square-minus"></i></a> | '.$producto['cantidad'].' | <a href="carrito.php?id_sumar='.$producto['ID_prod'].'"><i class="fa-regular fa-square-plus"></i></a> </p>
+                    <p>Precio Unit: $'.$producto['precio_prod'].'</p>
+                    <p class="SubTotal">Subtotal: $'.$producto['cantidad'] * $producto['precio_prod'].'</p>
+                </div>';
+            $total = $total + $producto['cantidad'] * $producto['precio_prod'];
+        }
+        echo '<p class="total">Total:$'.$total.'</p>
+            <a href="carrito.php?finCompra" class="comprar" onClick="return confirm(\'Seguro desea proceder a comprar\')">Finalizar Compra</a>
+            <div class="link">
+                <a href="carrito.php?vaciarCarrito">Vaciar Carrito</a>
+                <a href="../index.php">Seguir Comprando</a>
+            </div>
         </div>';
-        $total = $total + $producto['cantidad'] * $producto['precio_prod'];
     }
-    echo '
-        <p class="total">Total:$'.$total.'</p>
-        <a href="carrito.php?finCompra" class="comprar" onClick="return confirm(\'Seguro desea proceder a comprar\')">Finalizar Compra</a>
-    <div class="link">
-        <a href="carrito.php?vaciarCarrito">Vaciar Carrito</a>
-        <a href="../index.php">Seguir Comprando</a>
-        </div>
-    </div>';
-}
 
 function mostrarCarritoVacio(){
     echo '
-    <div class="carrito">
-    <div class="error">Carrito vacio <a href="../index.php">Ir a Tienda</a></div>
+    <div class="vacio">
+    <div class="error">Carrito vacio</div>
+    <a class="ir-tienda" href="../index.php">Ir a Tienda</a>
     </div>';
 }
 

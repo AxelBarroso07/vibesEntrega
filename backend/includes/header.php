@@ -22,29 +22,32 @@
     <div class="login-buttons">
     <?php
 if (isset($_SESSION['usuario'])) {
-  echo '<a href="backend/perfil.php"><span">' . $_SESSION['usuario'] . '</span></a>';
+
+  echo '<a href="backend/productos.php">Productos</a>';
+  echo '<a  href="backend/perfil.php"><span">' . $_SESSION['usuario'] . '</span></a>';
     echo '<a href="backend/carrito.php">Carrito</a>';
+
   
 
 
    
 } else if (isset($_SESSION['usuarioAdmin'])) {
-  
-    echo '<div class="buttons"> ';
-    echo '<a href="backend/carrito.php">Carrito</a>';
-    echo '<a class="nombreAdmin" href="backend/vibesAdmin.php">'.$_SESSION['usuarioAdmin'].'</a>';
+  echo '<div class="buttons"> 
+    <a class="nombreAdmin" href="./backend/vibesAdmin.php">'.$_SESSION['usuarioAdmin'].'</a>';
  
-      
 
-    echo '<a href="backend/logout.php" class="logout-button">Salir</a> </div>';
-
+    echo '<a href="./backend/logout.php" class="logout-button">Salir</a> </div>';
 
 } else {
     $loginText = (basename($_SERVER['PHP_SELF']) == 'form_login.php') ? '¿No tienes cuenta?' : 'Iniciar sesión';
     $loginLink = (basename($_SERVER['PHP_SELF']) == 'form_login.php') ? '../form_registro.php' : '../form_login.php';
     
+
+    echo '<a href="backend/productos.php">Productos</a>';
     echo '<a href="' . $loginLink . '">' . $loginText . '</a> ';
-    echo '<a href="carrito.php">Carrito</a>';
+    echo '<a href="./backend/carrito.php">Carrito</a>';
+
+  
 }
 ?>
 

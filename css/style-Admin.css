@@ -1,46 +1,46 @@
+
 *{
-    margin: 0;
-    padding: 0;
-  box-sizing: border-box;
-   
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+ 
 }
 
 
 
 .links{
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
+width: 100%;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+position: relative;
 }
 
-a{
-  padding: 20px;
-  border: 2px solid #000;
-  width: 70%;
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-
-
-a:link, :visited, :active{
+.buttons-central{
+padding: 20px;
+border: 2px solid #000;
+width: 70%;
+text-align: center;
+font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
   text-decoration: none;
-  color: #000;
-  
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+.buttonscentral, a:link, :visited, :active{
+text-decoration: none;
+color: #000;
+
 }
 
 
 
-a:hover {
-  background-color: #000;
-  color: #fff;
+.buttons-central:hover {
+background-color: #000;
+color: #fff;
 }
 

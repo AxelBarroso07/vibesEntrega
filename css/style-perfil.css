@@ -54,7 +54,11 @@ button[type="submit"] {
     bottom: 10px;
     left: 10px;
 }
-
+form {
+    padding: 10% 5% 2%;
+    width: 90%;
+  }
+  
 .datos,
 .pedidos {
     display: none;
