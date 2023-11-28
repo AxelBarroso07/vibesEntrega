@@ -21,7 +21,7 @@ function mostrarProductos(){
         echo '<div class="carrito">';
         foreach ($carrito as $indice => $producto) {
             echo '<div class="producto">
-                    <p class="eliminar"><a href="carrito.php?id_borrar='.$producto['ID_prod'].'"><i class="fa-solid fa-trash"></i></a></p>
+                    
                     <img src="../img/productos/'.$producto['img_prod'].'" alt="">
                     <p>'.$producto['nbr_prod'].'</p>
                     <p>Cantidad:<a href="carrito.php?id_restar='.$producto['ID_prod'].'"><br><i class="fa-regular fa-square-minus"></i></a> | '.$producto['cantidad'].' | <a href="carrito.php?id_sumar='.$producto['ID_prod'].'"><i class="fa-regular fa-square-plus"></i></a> </p>
@@ -33,6 +33,7 @@ function mostrarProductos(){
         echo '<p class="total">Total:$'.$total.'</p>
             <a href="carrito.php?finCompra" class="comprar" onClick="return confirm(\'Seguro desea proceder a comprar\')">Finalizar Compra</a>
             <div class="link">
+        <a href="carrito.php?id_borrar='.$producto['ID_prod'].'">eliminar</a>
                 <a href="carrito.php?vaciarCarrito">Vaciar Carrito</a>
                 <a href="../index.php">Seguir Comprando</a>
             </div>

@@ -63,11 +63,6 @@ if (isset($_SESSION['usuario'])) {
   </nav>
   </div>
 
-
-
-
- 
-
 </body>
 
 </html>

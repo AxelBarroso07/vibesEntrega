@@ -47,7 +47,7 @@ body {
 }
 section {
   height: 100vh;
-  width: 5px;
+
 }
 
 a {
@@ -97,4 +97,12 @@ form {
 .mensaje-error {
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+.parrafo, p{
+  font-size: 2rem;
+}
+
+
 }
