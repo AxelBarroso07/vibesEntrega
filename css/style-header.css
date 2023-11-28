@@ -34,6 +34,7 @@ a:link,
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+ 
 }
 
 .phrase {
@@ -71,4 +72,18 @@ a{
 .parrafo{
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    background-color: #fff;
+  }
+
+  
+
+ 
 }
