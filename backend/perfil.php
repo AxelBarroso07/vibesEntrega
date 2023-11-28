@@ -21,7 +21,7 @@ if (isset($_SESSION['usuario'])) {
     <title>Su perfil de Vibes</title>
     <link rel="stylesheet" href="../css/style-perfil.css">
     <link rel="stylesheet" href="../css/style-header.css">
-
+    
 
 </head>
 

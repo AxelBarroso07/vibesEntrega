@@ -9,6 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
   overflow: auto;
   scrollbar-color: transparent transparent;
@@ -45,8 +46,20 @@
     color: #fff;
   }
 
-  
- 
+  .search-container{
+    width: 100%;
+    margin-left: 5%;
+  }
+
+
+  .search{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    padding: 20px;
+    background-color: #000;
+  }
 
 
 

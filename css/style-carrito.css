@@ -1,60 +1,76 @@
 *{
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
 
 .carrito {
-    width: 100%;
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Centrar el carrito en la pantalla */
+    max-width: 600px; /* Establecer un ancho máximo para el carrito */
+}
+
+.producto {
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+   
 }
 
 
-a.comprar {
-    display: block;
-    width: 100%;
+
+.producto img {
+    max-width: 100px;
+    margin-bottom: 10px;
+   
+}
+
+.producto p {
+    margin: 5px 0;
+    padding: 5px;
+}
+
+.total {
     font-size: 18px;
-    margin: 10px 0;
-    font-family: 'Poppins', sans-serif; /* Fuente Poppins */
-    border-bottom: 1px solid #000; /* Línea inferior */
-    text-align: center;
-    text-decoration: none;
-
+    font-weight: bold;
+    margin-top: 20px;
 }
 
-a.comprar:hover {
-    color: var(--acento);
+.comprar {
+    border: 2px solid #000;
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: inline-block;
 }
 
 .link {
     display: flex;
     justify-content: space-between;
-    margin: 10px 0;
+    margin-top: 10px;
 }
 
-p{
-    font-size: 18px;
-    margin: 10px 0;
-    font-family: 'Poppins', sans-serif; /* Fuente Poppins */
+.vacio{
+    font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-p.total {
-    font-size: 1.5em;
-    font-weight: bolder;
-    margin: 15px 0;
-    text-align: center;
-}
-
-p.SubTotal {
-    font-size: 1em;
-    font-weight: bolder;
-    margin: 10px 0;
-    text-align: right;
-}
-
-p.eliminar {
-    text-align: right;
+.ir-tienda{
+    border-bottom:2px solid #000 ;
 }
