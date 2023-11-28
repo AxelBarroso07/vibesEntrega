@@ -20,7 +20,8 @@ if (isset($_SESSION['usuario'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Su perfil de Vibes</title>
     <link rel="stylesheet" href="../css/style-perfil.css">
-    <link rel="stylesheet" href="../css/style-index.css">
+    <link rel="stylesheet" href="../css/style-header.css">
+
 
 </head>
 

@@ -19,8 +19,9 @@ if (isset($_SESSION['usuario'])) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Detalles del Producto</title>
-    <link rel="stylesheet" href="../css/style-index.css">
+
     <link rel="stylesheet" href="../css/style-productos.css">
+    <link rel="stylesheet" href="../css/style-header.css">
    </head>
 
 <body>
