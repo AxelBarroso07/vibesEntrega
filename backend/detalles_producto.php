@@ -42,24 +42,25 @@ if (isset($_SESSION['usuario'])) {
             $informacion = $producto['informacion'];
             echo '<div class="container">';
             echo '<div class="product-info">';
-            echo '<h3 class="nombre-prenda">"' . $nombre . '"</h3>';
-            echo '<select name="size">';
-            echo '<option value="S">S</option>';
-            echo '<option value="M">M</option>';
-            echo '<option value="L">L</option>';
-            echo '<option value="XL">XL</option>';
+            // echo '<h3 class="nombre-prenda">"' . $nombre . '"</h3>';
+
+            echo '<select>';
+            echo '<option value="S">TALLE: S</option>';
+            echo '<option value="M">TALLE: M</option>';
+            echo '<option value="L">TALLE: L</option>';
+            echo '<option value="XL">TALLE: XL</option>';
             echo '</select>'; 
-            echo '<a href="carrito.php?ID_prod=' . $id . '"><button class="comprar-btn">Comprar</button></a>';
-            echo '<p>Precio: ' . $precio . '</p>';
+            echo '<a href="carrito.php?ID_prod=' . $id . '"><button class="comprar-btn">COMPRAR</button></a>';
+            echo '<p class ="info">Precio: ' . $precio . '</p>';
             echo '<p style="font-weight: bold;">Información sobre la prenda:</p>';
-            echo '<p>' . $informacion . '</p>';
+            echo '<p class ="info">' . $informacion . '</p>';
            
            
             echo '</div>';
             echo '<div class="container-image-title">';
             // Ajusta el ancho y alto según tus necesidades
             echo '<img id="product-img" src="../img/productos/' . $imagen . '" alt="' . $nombre . '" width="400" height="500">';
-         
+            echo '<h3 class="nombre-prenda">"' . $nombre . '"</h3>';
             echo '</div>';
 
            

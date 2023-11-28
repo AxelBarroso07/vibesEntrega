@@ -23,9 +23,9 @@ body::-webkit-scrollbar {
 
   }
 
-  p, .parrafo{
+   .parrafo{
     font-family: 'Roboto', sans-serif;
-    font-weight: bold;
+    /* color: black; */
   }
  
 

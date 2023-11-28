@@ -8,7 +8,6 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
 }
 
@@ -20,7 +19,7 @@
     flex-direction: column;
     margin-left: 10%;
     font-family: 'Roboto', sans-serif;
-    font-weight: lighter;
+    /* font-weight: lighter; */
     font-size: 20px;
     width: 50%;
 }
@@ -29,7 +28,7 @@ select{
     width: 30%;
     padding: 10px;
     text-align: center;
- 
+    border: 1px solid;
 }
 
 .comprar-btn {
@@ -38,7 +37,7 @@ select{
     border: 1px solid #000;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
-    font-weight: lighter;
+    /* font-weight: lighter; */
 padding: 10px;
     font-size: 1rem;
     background-color: white;
@@ -48,9 +47,11 @@ padding: 10px;
     margin-bottom: 20px;
 }
 
-p{
-
+.info{
+    /* font-weight: bold; */
+    color: black;
     margin-bottom: 20px;
+    padding: 15px;
 }
 .container {
     display: grid;
@@ -58,14 +59,16 @@ p{
 }
 
 .container img {
-    margin-top: 20px;
-    margin-right: 20%;
-    align-self: center; 
+    width: 50%;
+    /* border: 2px solid #000; */
     max-width: 100%; 
-    border: 2px solid #000;
 }
 
-
 .nombre-prenda{
-    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    /* justify-content: center; */
+    text-decoration: underline;
+    padding: 10px;
+    margin-left: 20%;
 }
