@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'db/conexion_db.php';
+require_once('includes/functionCart.php');
 
 if (isset($_SESSION['usuario'])) {
     $nombre = $_SESSION['usuario'];
@@ -27,7 +28,7 @@ if (isset($_SESSION['usuario'])) {
 
 <body>
     <header>
-        <?php include('../backend/includes/header.php'); ?>
+        <?php include('includes/header.php'); ?>
     </header>
     <form action="logout.php" method="post">
         <button type="submit" class="logout-button">Cerrar Sesión</button>
@@ -43,7 +44,7 @@ if (isset($_SESSION['usuario'])) {
         </div>
 
         <div class="pedidos">
-            
+            <?php mostrarPedidos($_SESSION['ID_user']); ?>
         </div>
     </div>
 

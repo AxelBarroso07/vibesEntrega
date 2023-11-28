@@ -48,6 +48,7 @@ include 'backend/db/conexion_db.php';
                 if (password_verify($contrasenia, $registro['Pass_u'])) {
                     $_SESSION['usuario'] = $usuario;
                     $_SESSION['email'] = $registro['email'];
+                    $_SESSION['ID_user'] = $registro['ID_u'];
                     header("location:index.php");
                 } else {
                     echo 'Contraseña incorrecta';

@@ -15,7 +15,7 @@ include './db/conexion_db.php';
 <body>
 
     <section id="productos">
-    <?php include '../includes/header.php'; ?>
+    <?php include 'includes/header.php'; ?>
 
 
         <div class="search-container">

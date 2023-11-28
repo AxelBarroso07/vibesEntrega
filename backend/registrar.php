@@ -37,6 +37,8 @@ include 'db/conexion_db.php';
         $registro = mysqli_fetch_assoc($consulta);
         if (mysqli_num_rows($consulta) > 0) {
             $_SESSION['usuario'] = $registro['Nbr_u'];
+            $_SESSION['email'] = $registro['email'];
+            $_SESSION['ID_user'] = $registro['ID_u'];
             $sql = "UPDATE usuarios SET token= 1 WHERE token = '$token'";
             $actualizar = mysqli_query($conexion, $sql);
             echo 'usuario enviado';
