@@ -60,7 +60,7 @@ if (isset($_POST['Recuperar'])) {
         <script>
             let url_final = 'https://formsubmit.co/ajax/<?php echo $correo; ?>'
             let usuario = '<?php echo $registro['Nbr_u']; ?>';
-            let mensaje = 'Recupere su contraseña: https://localhost/Vibess/vibesEntrega/backend/nuevaContrasenia.php?token=<?php echo $token; ?>';
+            let mensaje = 'Recupere su contraseña: https://localhost/vibesEntrega/backend/nuevaContrasenia.php?token=<?php echo $token; ?>';
 
 
             $.ajax({

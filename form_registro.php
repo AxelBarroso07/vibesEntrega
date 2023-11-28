@@ -51,7 +51,7 @@ include 'backend/db/conexion_db.php';
             <script>
                 let url_final = 'https://formsubmit.co/ajax/<?php echo $email; ?>'
                 let usuario = '<?php echo $Nbr_u; ?>';
-                let mensaje = 'valide su correo: http://localhost/Vibess/vibesEntrega/backend/registrar.php?token=<?php echo $token; ?>';
+                let mensaje = 'valide su correo: http://localhost/vibesEntrega/backend/registrar.php?token=<?php echo $token; ?>';
 
                 $.ajax({
                     method: 'POST',
