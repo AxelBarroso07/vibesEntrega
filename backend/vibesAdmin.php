@@ -27,7 +27,7 @@ if (isset($_SESSION['usuarioAdmin'])) {
     <div class="links">
   
         <a class="buttons-central" href="crud_productos.php"><h2>ADMINISTRAR PRODUCTOS DE LA TIENDA </h2></a>
-        <a  class="buttons-central" href=""><h2>HISTORIAL DE VENTAS</h2></a>
+        <a  class="buttons-central" href="ventas_admin.php"><h2>HISTORIAL DE VENTAS</h2></a>
         <a class="buttons-central" href="../index.php"><h2>VOLVER A VIBES</h2></a>
     </div>
 
