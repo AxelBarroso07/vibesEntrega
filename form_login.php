@@ -37,7 +37,6 @@ include 'backend/db/conexion_db.php';
 
         if (isset($_POST['ingresar'])) {
 
-            session_start();
             $contrasenia = $_POST['contrasenia'];
             $usuario = $_POST['usuario'];
 

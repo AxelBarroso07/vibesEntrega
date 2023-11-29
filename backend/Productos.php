@@ -1,6 +1,10 @@
 <?php
 include './db/conexion_db.php';
-?><!DOCTYPE html>
+?>
+<?php
+include './db/conexion_db.php';
+?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,22 +14,37 @@ include './db/conexion_db.php';
     <link rel="stylesheet" href="../css/style-header.css">
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('.categoria-producto').on('click', function () {
+                var categoria = $(this).data('categoria');
+                if (categoria === 'todos') {
+                    $('.grid-container').show();
+                } else {
+                    $('.grid-container').hide();
+                    $('.' + categoria).show();
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
 
     <section id="productos">
-    <?php include 'includes/header.php'; ?>
-
+        <?php include 'includes/header.php'; ?>
 
         <div class="search-container">
-      
-        <div id="buscador">
-        <input type="text"  class="search" placeholder ="buscar productos" name="buscar_prod" id="buscar" onkeyup="buscar_prod($('#buscar').val());" >
-        </div>
-   
-        <div id="datos_buscador"></div>
-       
+            <details>
+                <summary>Categorías</summary>
+                <ul>
+                    <li><a href="#" class="categoria-producto" data-categoria="todos">Todos</a></li>
+                    <li><a href="#" class="categoria-producto" data-categoria="remera">Remeras</a></li>
+                    <li><a href="#" class="categoria-producto" data-categoria="pantalon">Pantalones</a></li>
+                    <li><a href="#" class="categoria-producto" data-categoria="buzo">Buzos</a></li>
+                    <li><a href="#" class="categoria-producto" data-categoria="accesorio">Accesorios</a></li>
+                </ul>
+            </details>
         </div>
 
         <div class="image-container">
@@ -37,7 +56,7 @@ include './db/conexion_db.php';
                 echo '<div class="mensaje-error">No hay productos registrados </div>';
             } else {
                 while ($registro = mysqli_fetch_assoc($consulta)) {
-                    echo '<div class="grid-container">
+                    echo '<div class="grid-container ' . $registro['categoria'] . '">
                             <a href="detalles_producto.php?id=' . $registro['id_producto'] . '">
                                 <img src="../img/productos/' . $registro['imagen'] . '" alt="producto">
                             </a>
@@ -48,7 +67,7 @@ include './db/conexion_db.php';
         </div>
 
     </section>
-    <script src="../js/buscador.js"></script>
+
 </body>
 
 </html>

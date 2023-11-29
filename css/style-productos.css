@@ -24,7 +24,12 @@
     width: 50%;
 }
 
-
+select{
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid;
+}
 
 .comprar-btn {
     cursor: pointer;

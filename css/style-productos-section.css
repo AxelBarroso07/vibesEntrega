@@ -14,6 +14,7 @@
   overflow: auto;
   scrollbar-color: transparent transparent;
   scrollbar-width: thin;
+  overflow-x: hidden;
 }
 
 #productos::-webkit-scrollbar {
@@ -31,9 +32,9 @@
 
 .image-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Utiliza un mínimo de 200px y ajusta automáticamente */
-  gap: 20px; /* Espacio entre las imágenes */
-  max-width: 100%; /* Limita el ancho al 70% del contenedor padre */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 100%;
   height: 40%;
 }
 
@@ -42,27 +43,34 @@
   height: auto;
 }
 
-  ::placeholder{
-    color: #fff;
-  }
+::placeholder {
+  color: #fff;
+}
 
-  .search-container{
-    width: 100%;
-    margin-left: 5%;
-  }
-
-
-  .search{
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    width: 90%;
-    padding: 20px;
-    background-color: #000;
-  }
+.search-container {
+  width: 100%;
+  margin-left: 8%;
+}
 
 
 
+/* Estilos para el details y summary */
+details {
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  width: 80%;
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
+  margin: 20px;
+}
 
-  
- 
+summary, a.categoria-producto{
+
+  color: #fff;
+  font-size: 18px; /* Cambiar el tamaño de la fuente según sea necesario */
+  font-weight: bold; /* Cambiar el peso de la fuente según sea necesario */
+  cursor: pointer;
+}
+
+
