@@ -35,7 +35,7 @@
     <?php
 if (isset($_SESSION['usuario'])) {
 
-  echo '<a href="productos.php">Productos</a>';
+  echo '<a href="Productos.php">Productos</a>';
   echo '<a  href="perfil.php"><span">' . $_SESSION['usuario'] . '</span></a>';
     echo '<a href="carrito.php">Carrito</a>';
 
@@ -55,7 +55,7 @@ if (isset($_SESSION['usuario'])) {
     $loginLink = (basename($_SERVER['PHP_SELF']) == 'form_login.php') ? '../form_registro.php' : '../form_login.php';
     
 
-    echo '<a href="productos.php">Productos</a>';
+    echo '<a href="Productos.php">Productos</a>';
     echo '<a href="' . $loginLink . '">' . $loginText . '</a> ';
     echo '<a href="carrito.php">Carrito</a>';
 
