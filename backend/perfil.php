@@ -5,6 +5,7 @@ require_once('includes/functionCart.php');
 
 if (isset($_SESSION['usuario'])) {
     $nombre = $_SESSION['usuario'];
+    $mail = $_SESSION['email'];
 
 } else {
     // Si no existen los datos de sesión, redirigir al formulario de registro
@@ -42,6 +43,7 @@ if (isset($_SESSION['usuario'])) {
 
         <div class="datos">
             <h3 class="nombre">Usuario: <?php echo $nombre; ?></h3>
+            <h3 class="nombre">Mail: <?php echo $mail; ?></h3>
         </div>
 
         <div class="pedidos">

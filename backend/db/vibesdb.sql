@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2023 at 04:40 AM
+-- Generation Time: Nov 29, 2023 at 05:24 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -24,6 +24,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `ID_order` int(11) NOT NULL,
+  `Date_order` date NOT NULL,
+  `articles` text NOT NULL,
+  `ID_user` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `productos`
 --
 
@@ -34,15 +47,9 @@ CREATE TABLE `productos` (
   `cantidad_stock` int(16) NOT NULL,
   `imagen` varchar(120) COLLATE utf8_bin NOT NULL,
   `informacion` varchar(200) COLLATE utf8_bin NOT NULL,
-  `talles` varchar(11) COLLATE utf8_bin NOT NULL
+  `talles` varchar(11) COLLATE utf8_bin NOT NULL,
+  `categoria` varchar(200) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Dumping data for table `productos`
---
-
-INSERT INTO `productos` (`id_producto`, `nombre`, `precio`, `cantidad_stock`, `imagen`, `informacion`, `talles`) VALUES
-(25, 'Remera basica negra', 30000, 20, '1698686388-remera.jpg', 'Remera basica de algodon puro', 'S');
 
 -- --------------------------------------------------------
 
@@ -63,13 +70,18 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`ID_u`, `Nbr_u`, `Pass_u`, `email`, `token`) VALUES
-(1, 'NicoAdmin', 'VentanaAdmin', 'cabral.nicolas@tecnica7.edu.ar', 2),
-(27, 'axel', '$2y$10$jT5IDMWivF7Od84RFZHveORBcth2AcOn1IybiO84cqBOProIK/Oz.', 'asd@gmail.com', 1698687680),
-(40, 'nico', '$2y$10$ZkpYmlAa9VHn3JI/vHY7uO.GJHKepbPUl/xtJJISrT2YTWybKGKQm', 'cabralnicolas91@gmail.com', 1);
+(41, 'NicoAdmin', 'VentanaAdmin', 'cabral.nicolas@tecnica7.edu.ar', 2),
+(45, 'nico', '$2y$10$mY2q.nAlCpJXAjHlYbtNhO/iFrifrdwj.TXdPyev.qvKfG1gtK0I2', 'cabralnicolas91@gmail.com', 1);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`ID_order`);
 
 --
 -- Indexes for table `productos`
@@ -88,16 +100,22 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `ID_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_producto` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID_u` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `ID_u` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
