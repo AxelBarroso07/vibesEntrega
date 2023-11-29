@@ -3,6 +3,7 @@
 
 <?php
 include('db/conexion_db.php');
+include("redimensionarImg.php");
 
 $sql_select = "SELECT * FROM productos";
 $consulta = mysqli_query($conexion, $sql_select);

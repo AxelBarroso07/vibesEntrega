@@ -27,9 +27,10 @@ if (isset($_SESSION['usuario'])) {
 </head>
 
 <body>
-    <header>
+
         <?php include('includes/header.php'); ?>
-    </header>
+   
+    <section class="perfil">
     <form action="logout.php" method="post">
         <button type="submit" class="logout-button">Cerrar Sesión</button>
     </form>
@@ -47,7 +48,7 @@ if (isset($_SESSION['usuario'])) {
             <?php mostrarPedidos($_SESSION['ID_user']); ?>
         </div>
     </div>
-
+    </section>
     <script>
         function mostrarDatosPersonales() {
             document.querySelector('.datos').style.display = 'block';
